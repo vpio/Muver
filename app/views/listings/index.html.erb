@@ -1,3 +1,11 @@
-<% @listings.each do |listing| %>
-<%= listing.description %>
+<h1>hi</h1>
+
+<%= form_tag("/listings", method: "post") do %>
+  <div class="form-group">
+    <%= label_tag(:description, "Listing Description:") %>
+    <%= text_field_tag(:description) %>
+  </div>
+  <div class="actions">
+    <%= submit_tag("Post") %>
+  </div>
 <% end %>
