@@ -7,6 +7,12 @@ class ListingsController < ApplicationController
     @listing = Listing.new
   end
 
+  def show
+    @listing = Listing.find(params[:id])
+    puts params[:id]
+    puts "hi pio"
+  end
+
   def create
     @listing = current_user.listings.new(listing_params)
     if @listing.save
@@ -17,6 +23,8 @@ class ListingsController < ApplicationController
         alert: "Could not save listing: #{@listing.errors.full_messages.join(', ')}"
     end
   end
+
+
 
   private
 
