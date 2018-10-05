@@ -9,8 +9,6 @@ class ListingsController < ApplicationController
 
   def show
     @listing = Listing.find(params[:id])
-    puts params[:id]
-    puts "hi pio"
   end
 
   def create
@@ -23,8 +21,6 @@ class ListingsController < ApplicationController
         alert: "Could not save listing: #{@listing.errors.full_messages.join(', ')}"
     end
   end
-
-
 
   private
 
