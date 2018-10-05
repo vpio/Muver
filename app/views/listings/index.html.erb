@@ -1,5 +1,5 @@
 <h1>Listings</h1>
 
 <% @listings.each do |l| %>
-  <div><%= l.description %></div>
+  <div><%= link_to l.description, listing_path(l.id) %></div>
   <% end %>
