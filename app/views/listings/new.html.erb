@@ -1,0 +1,11 @@
+<h1>Post Your Move Dawg!</h1>
+
+<%= form_with(model: @listing) do |form|%>
+  <div class="form-group">
+    <%= form.label(:description, "Listing Description:") %>
+    <%= form.text_field(:description) %>
+  </div>
+  <div class="actions">
+    <%= form.submit("Post") %>
+  </div>
+<% end %>
