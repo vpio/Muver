@@ -5,8 +5,6 @@ class ProposalsController < ApplicationController
   end
 
   def create
-    puts "============="
-    p params[:message]
     @proposal = Proposal.new(proposal_params)
     @proposal.save
     redirect_to request.referrer
