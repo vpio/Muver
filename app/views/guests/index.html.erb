@@ -1,0 +1,9 @@
+<h1>Listings</h1>
+
+<% @listings.each do |l| %>
+  <div><%= link_to l.description, listing_path(l.id) %></div>
+  <% end %>
+
+<hr>
+
+<%= link_to "New Move", new_listing_path %>
