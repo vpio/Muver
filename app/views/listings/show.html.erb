@@ -14,4 +14,10 @@
 
 <hr>
 
+<% @proposals.each do |p| %>
+<div><%= "#{p.user.email} says: " %><%= p.message %></div>
+<% end %>
+
+<%= render 'proposal/form' %>
+
 <%= link_to "Back", listings_path %>

@@ -9,6 +9,8 @@ class ListingsController < ApplicationController
   end
 
   def show
+    @proposal = Proposal.new
+    @proposals = Listing.find(params[:id]).proposals
     @listing = Listing.find(params[:id])
   end
 
