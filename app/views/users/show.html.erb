@@ -1,0 +1,9 @@
+<h1><%= "#{@user.email}'s Profile " %></h1>
+
+<%= @user.email %>
+
+<% if current_user.id == params[:id].to_i %>
+  <div>
+    <%= link_to "Edit Your Profile!", edit_user_registration_path, class: "btn btn-primary" %>
+  </div>
+<% end %>
