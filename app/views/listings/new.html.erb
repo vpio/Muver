@@ -6,40 +6,46 @@
     <%= form.text_field(:description) %>
   </div>
   <div class="form-group">
-    <%= form.label(:starting_address, "Starting Address:") %>
-    <%= form.text_field(:starting_address) %>
+    <div><%= form.label(:starting_address, "Pick Up Location:") %></div>
+    <div><%= form.text_field(:starting_address, :placeholder => 'Address') %></div>
+    <div><%= form.text_field(:starting_address, :placeholder => 'City') %></div>
+    <div><%= form.text_field(:starting_address, :placeholder => 'State') %></div>
+    <div><%= form.text_field(:starting_address, :placeholder => 'Zip Code') %></div>
   </div>
   <div class="form-group">
-    <%= form.label(:ending_address, "Ending Address:") %>
-    <%= form.text_field(:ending_address) %>
+    <div><%= form.label(:starting_address, "Drop Off Location:") %></div>
+    <div><%= form.text_field(:starting_address, :placeholder => 'Address') %></div>
+    <div><%= form.text_field(:starting_address, :placeholder => 'City') %></div>
+    <div><%= form.text_field(:starting_address, :placeholder => 'State') %></div>
+    <div><%= form.text_field(:starting_address, :placeholder => 'Zip Code') %></div>
   </div>
   <div class="form-group">
-    <%= form.label(:price, "Price:") %>
-    <%= form.text_field(:price) %>
+    <%= form.label(:price, "Price: $") %>
+    <%= form.number_field(:price, in: 1.0..10000.0, step: 1.0) %>
   </div>
   <div class="form-group">
     <%= form.label(:difficulty, "Difficulty:") %>
-    <%= form.text_field(:difficulty) %>
+    <%= form.select(:difficulty, ["Easy (Less than 5 pounds)","Normal (Less than 20 pounds)","Hard (Over 20 pounds)"]) %>
   </div>
   <div class="form-group">
     <%= form.label(:date, "Date:") %>
-    <%= form.text_field(:date) %>
+    <%= form.date_field(:date) %>
   </div>
   <div class="form-group">
     <%= form.label(:time, "Time:") %>
-    <%= form.text_field(:time) %>
+    <%= form.time_field(:time) %>
   </div>
   <div class="form-group">
-    <%= form.label(:contact, "Contact Info:") %>
-    <%= form.text_field(:contact) %>
+    <%= form.label(:contact, "Contact Email:") %>
+    <%= form.email_field(:contact) %>
   </div>
   <div class="form-group">
     <%= form.label(:stairs, "Stairs:") %>
-    <%= form.text_field(:stairs) %>
+    <%= form.select(:stairs, ["Yes","No"]) %>
   </div>
   <div class="form-group">
     <%= form.label(:max_people, "Max People:") %>
-    <%= form.text_field(:max_people) %>
+    <%= form.number_field(:max_people, in: 1.0..100.0, step: 1.0) %>
   </div>
   <div class="actions">
     <%= form.submit("Post") %>
