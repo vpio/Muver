@@ -5,8 +5,8 @@
     <div>Ending Address: <%= @listing.ending_address %></div>
     <div>Price: <%= @listing.price %></div>
     <div>Difficulty: <%= @listing.difficulty %></div>
-    <div>Date: <%= DateTime.parse(@listing.date).strftime('%A, %B %-d, %Y') %></div>
-    <div>Time: <%= DateTime.parse(@listing.time).strftime('%-I:%M %p') %></div>
+    <div>Date: <%= @listing.date %></div>
+    <div>Time: <%= @listing.time %></div>
     <div>Contact: <%= @listing.contact %></div>
     <div>Stairs: <%= @listing.stairs %></div>
     <div>Max People: <%= @listing.max_people %></div>
@@ -14,12 +14,12 @@
 
 <hr>
 
-<% @proposals.each do |p| %>
-<div><%= "#{p.user.email} wants to help you move! " %><%= link_to "View Profile", root_path %></div>
-<% end %>
+<!-- <%# @proposals.each do |p| %>
+<div><%#= "#{p.user.email} says: " %><%#= p.message %></div>
+<%# end %> -->
 
-<%= render 'proposals/form' %>
+<%#= render 'proposals/form' %>
 
-<hr>
 
-<%= link_to "Back", listings_path %>
+
+<%= link_to "Back", guests_path %>
