@@ -1,23 +1,16 @@
 <h1>Post Your Move Dawg!</h1>
 
-<%= form_with(model: @listing) do |form|%>
+<div class="form"><%= form_with(model: @listing) do |form|%>
   <div class="form-group">
     <%= form.label(:description, "Listing Description:") %>
     <%= form.text_field(:description) %>
   </div>
   <div class="form-group">
-    <div><%= form.label(:starting_address, "Pick Up Location:") %></div>
-    <div><%= form.text_field(:starting_address, :placeholder => 'Address') %></div>
-    <div><%= form.text_field(:starting_address, :placeholder => 'City') %></div>
-    <div><%= form.text_field(:starting_address, :placeholder => 'State') %></div>
-    <div><%= form.text_field(:starting_address, :placeholder => 'Zip Code') %></div>
-  </div>
+    <%= form.label(:starting_address, "Pick Up Location:") %>
+    <%= form.text_field(:starting_address, :placeholder => 'Address') %>
   <div class="form-group">
-    <div><%= form.label(:starting_address, "Drop Off Location:") %></div>
-    <div><%= form.text_field(:starting_address, :placeholder => 'Address') %></div>
-    <div><%= form.text_field(:starting_address, :placeholder => 'City') %></div>
-    <div><%= form.text_field(:starting_address, :placeholder => 'State') %></div>
-    <div><%= form.text_field(:starting_address, :placeholder => 'Zip Code') %></div>
+    <%= form.label(:ending_address, "Drop Off Location:") %>
+    <%= form.text_field(:ending_address, :placeholder => 'Address') %>
   </div>
   <div class="form-group">
     <%= form.label(:price, "Price: $") %>
@@ -51,6 +44,7 @@
     <%= form.submit("Post") %>
   </div>
 <% end %>
+</div>
 
 <hr>
 
