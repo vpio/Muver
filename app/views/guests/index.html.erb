@@ -12,7 +12,7 @@
       <div class="card-header"><%= @listings.last.user.email %></div>
       <div class="card-body text-primary">
         <h5 class="card-title">Primary card title</h5>
-        <p class="card-text"><%= link_to l.description, listing_path(l.id) %></p>
+        <p class="card-text"><%= link_to l.description, guest_path(l.id) %></p>
       </div>
     </div>
     <% end %>

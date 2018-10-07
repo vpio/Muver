@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   root 'static_pages#home'
 
-  resources :guests, only: [:index]
+  resources :guests, only: [:index, :show]
   resources :listings
   resource :proposals
 
