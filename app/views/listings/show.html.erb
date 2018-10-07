@@ -9,7 +9,6 @@
       <%= DateTime.parse(@listing.date).strftime('%A, %B %-d, %Y') %>
       <% end %>
     </div>
-
     <div>Time: <% unless @listing.time.length === 0 %>
       <%= DateTime.parse(@listing.time).strftime('%-I:%M %p') %>
       <% end %>
