@@ -5,8 +5,14 @@
     <div>Ending Address: <%= @listing.ending_address %></div>
     <div>Price: <%= @listing.price %></div>
     <div>Difficulty: <%= @listing.difficulty %></div>
-    <div>Date: <%#= DateTime.parse(@listing.date).strftime('%A, %B %-d, %Y') %></div>
-    <div>Time: <%#= DateTime.parse(@listing.time).strftime('%-I:%M %p') %></div>
+    <div>Date: <% unless @listing.date.length === 0 %>
+      <%= DateTime.parse(@listing.date).strftime('%A, %B %-d, %Y') %>
+      <% end %>
+    </div>
+    <div>Time: <% unless @listing.time.length === 0 %>
+      <%= DateTime.parse(@listing.time).strftime('%-I:%M %p') %>
+      <% end %>
+    </div>
     <div>Contact: <%= @listing.contact %></div>
     <div>Stairs: <%= @listing.stairs %></div>
     <div>Max People: <%= @listing.max_people %></div>
