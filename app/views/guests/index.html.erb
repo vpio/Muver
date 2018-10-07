@@ -1,9 +1,24 @@
-<h1>Listings</h1>
+<div class="guests-index-body">
 
-<% @listings.each do |l| %>
-  <div><%= link_to l.description, listing_path(l.id) %></div>
-  <% end %>
+  <h1 class="page-title">Here are all the People Moving near you:</h1>
 
-<hr>
+<!-- <div><%#= link_to l.description, listing_path(l.id) %></div> -->
 
-<%= link_to "New Move", new_listing_path %>
+  <hr>
+
+  <div class="card-columns">
+    <% @listings.each do |l| %>
+    <div class="card border-primary mb-3 card-shadow" style="max-width: 18rem;">
+      <div class="card-header"><%= @listings.last.user.email %></div>
+      <div class="card-body text-primary">
+        <h5 class="card-title">Primary card title</h5>
+        <p class="card-text"><%= link_to l.description, listing_path(l.id) %></p>
+      </div>
+    </div>
+    <% end %>
+  </div>
+  <div class="new-move-button">
+    <%= link_to "New Move", new_listing_path, class: "btn btn-primary card-shadow" %>
+  </div>
+
+</div>
