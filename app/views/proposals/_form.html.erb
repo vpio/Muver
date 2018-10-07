@@ -2,13 +2,9 @@
   <div class="form-group">
     <%= form.hidden_field :user_id, value: current_user.id %>
     <%= form.hidden_field :listing_id, value: @listing.id %>
-    <div class="field">
-      <%= form.label :message %>
-      <%= form.text_field :message %>
-      <%= form.hidden_field :approved, value: true %>
-    </div>
+    <%= form.hidden_field :approved, value: true %>
   </div>
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Sign Me Up!", class: "btn btn-primary" %>
   </div>
 <% end %>
