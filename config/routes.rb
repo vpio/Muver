@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   root 'static_pages#home'
 
+  get 'users/:id' => 'users#show'
+
   resources :guests, only: [:index, :show]
   resources :listings
   resource :proposals
