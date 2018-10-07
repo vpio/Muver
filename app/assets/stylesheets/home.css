@@ -1,5 +1,24 @@
 body{
-  background-color: white;
-  color: black;
-  font-family: helvetica;
+  background-image: url('https://media-cdn.tripadvisor.com/media/photo-s/01/1d/bd/ac/miami-beach.jpg'); 
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: 'Poppins', sans-serif, bold;
+
+}
+
+
+.intro{
+  color: white;
+  padding: 4rem;
+  text-align: justify;
+
+}
+
+#first-button {
+  color: white;
+  margin-bottom: 1rem
+}
+
+#second-button {
+color: white;
 }
