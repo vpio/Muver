@@ -1,5 +1,6 @@
 class ListingsController < ApplicationController
-  before_action :authenticate_user!
+  before_action :store_user_location!, if: :storable_location?
+  # before_action :authenticate_user!
   def index
     @listings = current_user.listings
   end
@@ -26,6 +27,15 @@ class ListingsController < ApplicationController
   end
 
   private
+
+  def storable_location?
+    request.get? && is_navigational_format? && !devise_controller? && !request.xhr?
+  end
+
+  def store_user_location!
+      # :user is the scope we are authenticating
+    store_location_for(:user, request.fullpath)
+  end
 
   def listing_params
     params.require(:listing).permit(:description, :starting_address, :ending_address, :price, :difficulty, :date, :time, :contact, :stairs, :max_people)
