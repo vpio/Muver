@@ -1,11 +1,12 @@
 class ListingsController < ApplicationController
   before_action :store_user_location!, if: :storable_location?
-  # before_action :authenticate_user!
+
   def index
     @listings = current_user.listings
   end
 
   def new
+    authenticate_user!
     @listing = Listing.new
   end
 
