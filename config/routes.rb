@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  root 'guests#index'
+  root 'static_pages#home'
+
+  resources :guests, only: [:index]
+
+  # root 'guests#index'
 
   resources :listings
   resource :proposals
