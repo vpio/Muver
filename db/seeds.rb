@@ -52,7 +52,8 @@ user  = User.create!(
       difficulty: difficulty,
       date: date,
       stairs: stairs,
-      contact: email
+      contact: email,
+      time: time
     )
   end
 
