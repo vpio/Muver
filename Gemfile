@@ -3,6 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.5.1'
 
+gem 'faker'
 gem 'devise'
 gem 'devise-bootstrap-views', '~> 1.0'
 gem 'geocoder'
