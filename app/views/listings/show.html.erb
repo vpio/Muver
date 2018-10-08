@@ -1,20 +1,25 @@
 <h1><%= @listing.description %></h1>
 
 <div>
-    <div>Starting Address: <%= @listing.starting_address %></div>
-    <div>Ending Address: <%= @listing.ending_address %></div>
-    <div>Price: <%= @listing.price %></div>
+    <div>Moving From: <a href="http://maps.google.com/maps?q=<%= @listing.latitude %>,<%= @listing.longitude %>"><%= @listing.address %></a>
+
+    <!-- <div>Moving To: <a href="http://maps.google.com/maps?q=<%= @listing.latitude %>,<%= @listing.longitude %>"><%= @listing.ending_address %></a> -->
+
+    <div>Moving To: <%= @listing.ending_address %></a>
+
+    <div>Price: <%= number_to_currency(@listing.price) %></div>
     <div>Difficulty: <%= @listing.difficulty %></div>
-    <div>Date: <% unless @listing.date.length === 0 %>
+    <div>Date: <% unless @listing.date.length == 0 %>
       <%= DateTime.parse(@listing.date).strftime('%A, %B %-d, %Y') %>
       <% end %>
     </div>
-    <div>Time: <% unless @listing.time.length === 0 %>
+    <div>Time: <% unless @listing.time.length == 0 %>
       <%= DateTime.parse(@listing.time).strftime('%-I:%M %p') %>
       <% end %>
     </div>
     <div>Contact: <%= @listing.contact %></div>
-    <div>Stairs: <%= @listing.stairs %></div>
+    <div>Stairs: <%= @listing.stairs? ? "Yes" : "No" %>
+    </div>
     <div>Max People: <%= @listing.max_people %></div>
 </div>
 

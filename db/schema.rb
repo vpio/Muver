@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_08_171828) do
+ActiveRecord::Schema.define(version: 2018_10_08_185247) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,6 +50,13 @@ ActiveRecord::Schema.define(version: 2018_10_08_171828) do
     t.boolean "stairs"
     t.integer "max_people"
     t.bigint "user_id"
+    t.string "street"
+    t.string "city"
+    t.string "state"
+    t.string "country"
+    t.string "ip"
+    t.float "latitude"
+    t.float "longitude"
     t.index ["user_id"], name: "index_listings_on_user_id"
   end
 

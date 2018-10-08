@@ -6,12 +6,23 @@
     <%= form.text_field(:description) %>
   </div>
   <div class="form-group">
-    <%= form.label(:starting_address, "Pick Up Location:") %>
-    <%= form.text_field(:starting_address, :placeholder => 'Address') %>
+    <%= form.label(:street, "Pick Up Address:") %>
+    <%= form.text_field(:street, :placeholder => 'Address') %>
+  </div>
   <div class="form-group">
-    <%= form.label(:ending_address, "Drop Off Location:") %>
+    <%= form.label(:city, "Pick Up City:") %>
+    <%= form.text_field(:city, :placeholder => 'City') %>
+  </div>
+  <div class="form-group">
+    <%= form.label(:state, "Pick Up State:") %>
+    <%= form.text_field(:state, :placeholder => 'State') %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label(:street, "Drop Off Address:") %>
     <%= form.text_field(:ending_address, :placeholder => 'Address') %>
   </div>
+
   <div class="form-group">
     <%= form.label(:price, "Price: $") %>
     <%= form.number_field(:price, in: 1.0..10000.0, step: 1.0) %>
