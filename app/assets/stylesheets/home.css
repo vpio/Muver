@@ -1,24 +1,55 @@
-body{
-  background-image: url('https://media-cdn.tripadvisor.com/media/photo-s/01/1d/bd/ac/miami-beach.jpg'); 
-  background-repeat: no-repeat;
-  background-size: cover;
+.home-page {
+  position: fixed;
+  overflow: auto;
+  width: 100%;
+  left: 0;
+  right: 0;
+  padding-bottom: 80vw;
+  background:
+  	linear-gradient(
+  		blue,
+  		transparent
+  	),
+  	linear-gradient(
+  		60deg,
+  		#bb2972,
+  		transparent
+  	),
+  	linear-gradient(
+  		-60deg,
+  		#ff7546,
+  		transparent
+  	);
+  background-blend-mode: screen;
   font-family: 'Poppins', sans-serif, bold;
-
 }
 
+.alert {
+  margin-bottom: 0;
+}
 
 .intro{
-  color: white;
-  padding: 4rem;
+  color: #e1e6f0;
   text-align: justify;
+  padding-top: 5vw;
+  padding-left: 10vw;
+  padding-right: 10vw;
+  display: inline-block;
+}
 
+.container-home {
+  text-align: center;
+  padding-left: 30vw;
+  padding-right: 30vw;
 }
 
 #first-button {
-  color: white;
-  margin-bottom: 1rem
+  margin-top: 10vw;
 }
 
-#second-button {
-color: white;
+#first-button, #second-button {
+  color: #e1e6f0;
+  margin-bottom: 5vw;
+  text-align: center;
+  font-weight: bold;
 }
