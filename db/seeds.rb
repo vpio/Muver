@@ -52,7 +52,9 @@ user  = User.create!(
       difficulty: difficulty,
       date: date,
       stairs: stairs,
-      contact: email
+      contact: email,
+      time: time,
+      max_people: maxpeople
     )
   end
 
