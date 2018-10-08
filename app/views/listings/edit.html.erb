@@ -1,0 +1,51 @@
+<h1>Edit Dat Move Dawg!</h1>
+
+<div class="form"><%= form_with(model: @listing) do |form|%>
+  <div class="form-group">
+    <%= form.label(:description, "Listing Description:") %>
+    <%= form.text_field(:description, value: @listing.description) %>
+  </div>
+  <div class="form-group">
+    <%= form.label(:starting_address, "Pick Up Location:") %>
+    <%= form.text_field(:starting_address, :placeholder => 'Address', value: @listing.starting_address) %>
+  <div class="form-group">
+    <%= form.label(:ending_address, "Drop Off Location:") %>
+    <%= form.text_field(:ending_address, :placeholder => 'Address', value: @listing.ending_address) %>
+  </div>
+  <div class="form-group">
+    <%= form.label(:price, "Price: $") %>
+    <%= form.number_field(:price, in: 1.0..10000.0, step: 1.0, value: @listing.price) %>
+  </div>
+  <div class="form-group">
+    <%= form.label(:difficulty, "Difficulty:") %>
+    <%= form.select(:difficulty, ["Easy (Less than 5 pounds)","Normal (Less than 20 pounds)","Hard (Over 20 pounds)", value: @listing.difficulty]) %>
+  </div>
+  <div class="form-group">
+    <%= form.label(:date, "Date:") %>
+    <%= form.date_field(:date, value: @listing.date) %>
+  </div>
+  <div class="form-group">
+    <%= form.label(:time, "Time:") %>
+    <%= form.time_field(:time, value: @listing.time) %>
+  </div>
+  <div class="form-group">
+    <%= form.label(:contact, "Contact Email:") %>
+    <%= form.email_field(:contact, value: @listing.contact) %>
+  </div>
+  <div class="form-group">
+    <%= form.label(:stairs, "Stairs:") %>
+    <%= form.select(:stairs, ["Yes","No"], value: @listing.stairs) %>
+  </div>
+  <div class="form-group">
+    <%= form.label(:max_people, "Max People:") %>
+    <%= form.number_field(:max_people, in: 1.0..100.0, step: 1.0, value: @listing.max_people) %>
+  </div>
+  <div class="actions">
+    <%= form.submit("Save") %>
+  </div>
+<% end %>
+</div>
+
+<hr>
+
+<%= link_to "View Listings", listings_path %>
