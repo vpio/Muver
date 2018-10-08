@@ -33,4 +33,10 @@
 
 <hr>
 
+<% if current_user.id == params[:id] %>
+  <div>
+    <%= link_to "Edit Your Listing!", edit_user_registration_path, class: "btn btn-primary" %>
+  </div>
+<% end %>
+
 <%= link_to "Back", listings_path %>

@@ -1,6 +1,6 @@
 class Listing < ApplicationRecord
   belongs_to :user
-  has_many :proposals
+  has_many :proposals, dependent: :destroy
   validates :description, presence: true
   geocoded_by :address
   after_validation :geocode
