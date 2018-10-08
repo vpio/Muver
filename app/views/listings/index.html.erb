@@ -2,6 +2,10 @@
 
 <% @listings.each do |l| %>
   <div><%= link_to l.description, listing_path(l.id) %></div>
+  <td>
+    <tr><%= link_to 'Destroy', l, :method => :delete, :id => l.id, class: "btn btn-danger float-right", data: { confirm: 'Are you sure?' } %></tr>
+    <tr><%= link_to 'Update', edit_listing_path(l.id), class: "btn btn-danger float-right" %></tr>
+  </td>
   <% end %>
 
 <hr>
