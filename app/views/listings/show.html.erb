@@ -28,8 +28,9 @@
 <% @proposals.each do |p| %>
 <div><%= "#{p.user.email} wants to help you move! " %><%= link_to "View Profile", user_profile_path %></div>
 <% end %>
-
+<% if current_user.id != @listing.user.id %>
 <%= render 'proposals/form' %>
+<% end %>
 
 <hr>
 
