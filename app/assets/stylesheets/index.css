@@ -1,13 +1,18 @@
 .page-title{
-  font-family: 'IBM Plex Sans Condensed', sans-serif;
+  font-family: 'Poppins', sans-serif, bold;
 }
 
 body{
   background-color: lightblue;
+  color: rgb(59, 74, 90);
 }
 
+h1{
+  padding: 1em;
+  text-align: center;
+}
 .card-shadow{
-  box-shadow: 5px 5px grey;
+  box-shadow: 5px 5px rgb(59, 74, 90);
 }
 
 .guests-index-body{
