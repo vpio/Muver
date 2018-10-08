@@ -32,6 +32,9 @@ user  = User.create!(
   2.times do
     description = Faker::SiliconValley.motto
     startaddress = Faker::Address.full_address
+    city = Faker::Address.city
+    state = Faker::Address.state_abbr
+    street = Faker::Address.street_address
     endaddress = Faker::Address.full_address
     price = rand(30..60)
     difficulty = ["Easy", "Medium", "Hard"].sample
@@ -41,7 +44,9 @@ user  = User.create!(
     time = "12:00"
     userfake.listings.create!(
       description: description,
-      starting_address: startaddress,
+      city: city,
+      state: state,
+      street: street,
       ending_address: endaddress,
       price: price,
       difficulty: difficulty,
