@@ -9,9 +9,8 @@
   <div class="card-columns">
     <% @listings.each do |l| %>
     <div class="card border-secondary mb-3 card-shadow" style="max-width: 18rem;">
-      <div class="card-header"><%= @listings.last.user.email %></div>
+      <div class="card-header"><%= "#{l.user.first_name} is moving" %></div>
       <div class="card-body text-primary">
-        <h5 class="card-title">Primary card title</h5>
         <p class="card-text"><%= link_to l.description, listing_path(l.id) %></p>
       </div>
     </div>
