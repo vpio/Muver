@@ -6,4 +6,5 @@ class User < ApplicationRecord
 
   has_many :proposals
   has_many :listings
+  has_one_attached :avatar
 end
