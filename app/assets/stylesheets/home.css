@@ -31,7 +31,7 @@
 .intro{
   color: #e1e6f0;
   text-align: justify;
-  padding-top: 5vw;
+  padding-top: 6vw;
   padding-left: 10vw;
   padding-right: 10vw;
   display: inline-block;
@@ -44,7 +44,7 @@
 }
 
 #first-button {
-  margin-top: 10vw;
+  margin-top: 6vw;
 }
 
 #first-button, #second-button {
