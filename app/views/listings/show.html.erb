@@ -21,7 +21,7 @@
 <hr>
 
 <% @proposals.each do |p| %>
-<div><%= "#{p.user.email} wants to help you move! " %><%= link_to "View Profile", root_path %></div>
+<div><%= "#{p.user.email} wants to help you move! " %><%= link_to "View Profile", user_profile_path %></div>
 <% end %>
 
 <%= render 'proposals/form' %>
