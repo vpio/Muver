@@ -15,7 +15,4 @@ class ProposalsController < ApplicationController
   def proposal_params
     params.require(:proposal).permit(:message, :user_id, :listing_id, :approved)
   end
-
-
-
 end

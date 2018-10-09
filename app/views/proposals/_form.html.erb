@@ -6,7 +6,10 @@
       <%= form.hidden_field :approved, value: true %>
     </div>
     <div class="actions">
+      <% if (@listing.proposals.where(user_id: current_user.id).count >= 1) %>
+      <% else %>
       <%= form.submit "Sign Me Up!", class: "btn btn-primary" %>
+      <% end %>
     </div>
   <% else %>
     <div class="actions">
