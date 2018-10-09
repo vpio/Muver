@@ -1,51 +1,75 @@
-<h1>Edit Dat Move Dawg!</h1>
+<h1>Edit Your Move</h1>
 
-<div class="form"><%= form_with(model: @listing) do |form|%>
-  <div class="form-group">
-    <%= form.label(:description, "Listing Description:") %>
-    <%= form.text_field(:description, value: @listing.description) %>
+<%= form_with(model: @listing) do |form|%>
+
+  <div class="row">
+    <div class="form-group col-md-12">
+      <div><%= form.label(:description) %></div>
+      <div><%= form.text_field(:description, class: "form-control") %></div>
+    </div>
   </div>
-  <div class="form-group">
-    <%= form.label(:starting_address, "Pick Up Location:") %>
-    <%= form.text_field(:starting_address, :placeholder => 'Address', value: @listing.starting_address) %>
-  <div class="form-group">
-    <%= form.label(:ending_address, "Drop Off Location:") %>
-    <%= form.text_field(:ending_address, :placeholder => 'Address', value: @listing.ending_address) %>
+  <div class="row">
+    <div class="form-group col-md-6">
+      <div><%= form.label(:street, "Pick Up Location") %></div>
+      <div><%= form.text_field(:street, :placeholder => 'Address', class: "form-control") %></div>
+    </div>
+    <div class="form-group col-md-4">
+      <div><%= form.label(:city) %></div>
+      <div><%= form.text_field(:city, :placeholder => 'City', class: "form-control") %></div>
+    </div>
+    <div class="form-group col-md-2">
+      <div><%= form.label(:state) %></div>
+      <div><%= form.text_field(:state, :placeholder => 'State', class: "form-control") %></div>
+    </div>
   </div>
-  <div class="form-group">
-    <%= form.label(:price, "Price: $") %>
-    <%= form.number_field(:price, in: 1.0..10000.0, step: 1.0, value: @listing.price) %>
+  <div class="row">
+    <div class="form-group col-md-12">
+      <div><%= form.label(:ending_address, "Drop Off Location:") %></div>
+      <div><%= form.text_field(:ending_address, :placeholder => 'Address', class: "form-control") %></div>
+    </div>
   </div>
-  <div class="form-group">
-    <%= form.label(:difficulty, "Difficulty:") %>
-    <%= form.select(:difficulty, ["Easy (Less than 5 pounds)","Normal (Less than 20 pounds)","Hard (Over 20 pounds)", value: @listing.difficulty]) %>
+  <div class="row">
+    <div class="form-group col-md-3">
+      <div><%= form.label(:price) %></div>
+      <div><%= form.number_field(:price, in: 1.0..10000.0, step: 1.0, class: "form-control") %></div>
+    </div>
+    <div class="form-group col-md-5">
+      <div><%= form.label(:difficulty) %></div>
+      <%= form.select(:difficulty, options_for_select([['Easy (Less than 5 pounds)'], ['Normal (Less than 20 pounds)'], ['Hard (Over 20 pounds)']]), {}, {class: "form-control"}) %>
+
+    </div>
+    <div class="form-group col-md-2">
+      <div><%= form.label(:stairs) %></div>
+      <%= form.select(:stairs, options_for_select([['Yes'], ['No']]), {}, {class: "form-control"}) %>
+    </div>
+    <div class="form-group col-md-2">
+      <div><%= form.label(:max_people) %></div>
+      <div><%= form.number_field(:max_people, in: 1.0..100.0, step: 1.0, class: "form-control") %></div>
+    </div>
   </div>
-  <div class="form-group">
-    <%= form.label(:date, "Date:") %>
-    <%= form.date_field(:date, value: @listing.date) %>
+  <div class="row">
+    <div class="form-group col-md-4">
+      <div><%= form.label(:date) %></div>
+      <div><%= form.date_field(:date, class: "form-control") %></div>
+    </div>
+    <div class="form-group col-md-4">
+      <div><%= form.label(:time) %></div>
+      <div><%= form.time_field(:time, class: "form-control") %></div>
+    </div>
+    <div class="form-group col-md-4">
+      <div><%= form.label(:contact) %></div>
+      <div><%= form.email_field(:contact, class: "form-control") %></div>
+    </div>
   </div>
-  <div class="form-group">
-    <%= form.label(:time, "Time:") %>
-    <%= form.time_field(:time, value: @listing.time) %>
-  </div>
-  <div class="form-group">
-    <%= form.label(:contact, "Contact Email:") %>
-    <%= form.email_field(:contact, value: @listing.contact) %>
-  </div>
-  <div class="form-group">
-    <%= form.label(:stairs, "Stairs:") %>
-    <%= form.select(:stairs, ["Yes","No"], value: @listing.stairs) %>
-  </div>
-  <div class="form-group">
-    <%= form.label(:max_people, "Max People:") %>
-    <%= form.number_field(:max_people, in: 1.0..100.0, step: 1.0, value: @listing.max_people) %>
-  </div>
+
   <div class="actions">
-    <%= form.submit("Save") %>
+    <%= form.submit :Submit, class: 'btn btn-primary'
+ %>
   </div>
 <% end %>
-</div>
 
 <hr>
 
-<%= link_to "View Listings", listings_path %>
+<div class="btn-group btn-light">
+  <%= link_to "View Listings", listings_path, :class => "btn" %>
+</div>
