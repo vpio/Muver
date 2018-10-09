@@ -1,9 +1,7 @@
 <h1><%= @listing.description %></h1>
 
 <div>
-    <div>Moving From: <a href="http://maps.google.com/maps?q=<%= @listing.latitude %>,<%= @listing.longitude %>"><%= @listing.address %></a>
-
-    <!-- <div>Moving To: <a href="http://maps.google.com/maps?q=<%= @listing.latitude %>,<%= @listing.longitude %>"><%= @listing.ending_address %></a> -->
+    <div>Moving From: <a href='http://maps.google.com/maps?q=<%= @listing.latitude %>,<%= @listing.longitude %>'><%= @listing.address %></a>
 
     <div>Moving To: <%= @listing.ending_address %></a>
 
@@ -18,30 +16,33 @@
       <% end %>
     </div>
     <div>Contact: <%= @listing.contact %></div>
-    <div>Stairs: <%= @listing.stairs? ? "Yes" : "No" %>
+    <div>Stairs: <%= @listing.stairs? ? 'Yes' : 'No' %>
     </div>
     <div>Max People: <%= @listing.max_people %></div>
 </div>
 
-<hr>
-
-<% @proposals.each do |p| %>
-<div><%= "#{p.user.first_name} wants to help you move! " %><%= link_to "View Profile", user_profile_path(:id => p.user.id) %></div>
-<% end %>
-
 <% if user_signed_in? %>
-
   <% if current_user.id != @listing.user.id %>
     <%= render 'proposals/form' %>
+    <hr>
   <% end %>
 
+  <% if current_user.id == @listing.user.id %>
+    <div>
+      <%= link_to 'Edit Your Listing', edit_listing_path, class: 'btn btn-primary' %>
+    </div>
+    <hr>
+  <% end %>
   <hr>
 
-  <% if current_user.id == params[:id] %>
-    <div>
-      <%= link_to "Edit Your Listing!", edit_user_registration_path, class: "btn btn-primary" %>
-    </div>
+  <% @proposals.each do |p| %>
+  <div><%= '#{p.user.first_name} wants to help you move! ' %><%= link_to 'View Profile', user_profile_path(:id => p.user.id) %></div>
   <% end %>
+
 <% end %>
 
-<%= link_to "Back", listings_path %>
+<hr>
+
+<div class='btn-group btn-light back'>
+  <%= link_to 'Back', guests_path, :class => 'btn' %>
+</div>
