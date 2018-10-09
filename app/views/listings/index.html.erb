@@ -11,8 +11,8 @@
     <% @listings.each do |l| %>
       <tr>
         <td><%= link_to l.description, listing_path(l.id) %></td>
-        <td><%= link_to 'Destroy', l, :method => :delete, :id => l.id, class: "btn btn-danger float-right", data: { confirm: 'Are you sure?' } %>
-        <%= link_to 'Update', edit_listing_path(l.id), class: "btn btn-danger float-right" %></td>
+        <td><%= link_to 'Destroy', l, :method => :delete, :id => l.id, class: "btn btn-danger float-right", data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Update', edit_listing_path(l.id), class: "btn btn-danger float-right" %></td>
       </tr>
     <% end %>
   </tbody>
