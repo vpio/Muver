@@ -28,7 +28,6 @@
   <% end %>
 
   <% if current_user.id == @listing.user.id %>
-  <%= react_component 'ListingsModal' %>
     <div>
       <%= link_to 'Edit Your Listing', edit_listing_path, class: 'btn btn-primary' %>
     </div>
@@ -37,7 +36,12 @@
   <hr>
 
   <% @proposals.each do |p| %>
-  <div><%= "#{p.user.first_name} wants to help you move! " %><%= link_to 'View Profile', user_profile_path(:id => p.user.id) %></div>
+  <div>
+    <%= "#{p.user.first_name} wants to help you move! " %><%= link_to 'View Profile', user_profile_path(:id => p.user.id) %>
+    <%= react_component 'ListingsModal',
+    props: { user: p.user }
+     %>
+  </div>
   <% end %>
 
 <% end %>
