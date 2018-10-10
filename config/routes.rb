@@ -7,13 +7,11 @@ Rails.application.routes.draw do
   get 'users/:id/pic' => 'users#new', as: :user_avatar
   post 'users/:id/pic' => 'users#create'
 
-
   resources :guests, only: [:index, :show]
   resources :listings
   resource :proposals
   resource :map, only: [:show]
   resource :jobs, only: [:show]
-
-
+  
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
