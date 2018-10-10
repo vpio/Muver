@@ -1,5 +1,7 @@
 <h1><%= @listing.description %></h1>
 
+<%= react_component 'Listings' %>
+
 <div>
     <div>Moving From: <a href='http://maps.google.com/maps?q=<%= @listing.latitude %>,<%= @listing.longitude %>'><%= @listing.address %></a>
 
