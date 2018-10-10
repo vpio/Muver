@@ -14,18 +14,18 @@ export default class Map extends Component {
     );
     map.on('load', (event) => {
       map.addSource(
-        'tasks',
+        'listings',
         {
           type: 'geojson',
           data: '/map.json'
         }
       );
       map.addLayer({
-        id: 'tasks',
+        id: 'listings',
         type: 'circle',
-        source: 'tasks'
+        source: 'listings'
       })
-      map.on('click', 'tasks', (e) => {
+      map.on('click', 'listings', (e) => {
        var coordinates = e.features[0].geometry.coordinates.slice();
        var description = e.features[0].properties.description;
        var id = e.features[0].properties.id;
@@ -34,13 +34,13 @@ export default class Map extends Component {
        }
        new mapboxgl.Popup()
            .setLngLat(coordinates)
-           .setHTML(`<a href="/tasks/${id}/sub_tasks">${description}</a>`)
+           .setHTML(`<a href="/listings/${id}">${description}</a>`)
            .addTo(map);
        });
-       map.on('mouseenter', 'tasks', () => {
+       map.on('mouseenter', 'listings', () => {
          map.getCanvas().style.cursor = 'pointer';
        });
-       map.on('mouseleave', 'tasks', () => {
+       map.on('mouseleave', 'listings', () => {
          map.getCanvas().style.cursor = '';
        });
     })
@@ -61,7 +61,7 @@ export default class Map extends Component {
   }
 
   componentDidMount(){
-    mapboxgl.accessToken = 'pk.eyJ1IjoiZGFuaWVsc2lsdmVyIiwiYSI6ImNqbjJvaXZ6aTR4b3kzeHFjZ3k2Y2gyY2MifQ.TEKJXzLLLfOj4wJsyHJO1A'
+    mapboxgl.accessToken = 'pk.eyJ1IjoiYW5keXdlaXNzMTk4MiIsImEiOiJIeHpkYVBrIn0.3N03oecxx5TaQz7YLg2HqA'
     let { coordinates } = this.props;
     const mapOptions = {
       container: this.mapContainer,
