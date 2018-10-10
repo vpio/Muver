@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import mapboxgl from 'mapbox-gl';
 
 export default class Map extends Component {
-
   createMap = (mapOptions, geolocationOptions) => {
     this.map = new mapboxgl.Map(mapOptions);
     const { map } = this;
@@ -12,6 +11,8 @@ export default class Map extends Component {
         trackUserLocation: true
       })
     );
+    var nav = new mapboxgl.NavigationControl();
+    map.addControl(nav, 'bottom-right');
     map.on('load', (event) => {
       map.addSource(
         'listings',
@@ -61,12 +62,12 @@ export default class Map extends Component {
   }
 
   componentDidMount(){
-    mapboxgl.accessToken = 'pk.eyJ1IjoiYW5keXdlaXNzMTk4MiIsImEiOiJIeHpkYVBrIn0.3N03oecxx5TaQz7YLg2HqA'
+    mapboxgl.accessToken = 'pk.eyJ1IjoiZGFuaWVsc2lsdmVyIiwiYSI6ImNqbjJvaXZ6aTR4b3kzeHFjZ3k2Y2gyY2MifQ.TEKJXzLLLfOj4wJsyHJO1A'
     let { coordinates } = this.props;
     const mapOptions = {
       container: this.mapContainer,
       style: `mapbox://styles/mapbox/streets-v9`,
-      zoom: 12,
+      zoom: 11.15,
       center: coordinates
     }
     const geolocationOptions = {
