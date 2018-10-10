@@ -1,4 +1,37 @@
 class MapsController < ApplicationController
   def show
+    respond_to do |format|
+      format.html do
+        @coordinates = request.location.coordinates.reverse
+        @coordinates = [0.0, 0.0] if @coordinates.empty?
+      end
+      format.json do
+        @listings = current_user
+                  .listings
+                  .where.not(
+                    latitude: nil,
+                    longitude: nil
+                  )
+        render json:  {
+                         type: "FeatureCollection",
+                         features: @listings.map do |listing|
+                           {
+                             type: "Feature",
+                             geometry: {
+                               type: "Point",
+                               coordinates: [
+                                 listing.longitude,
+                                 listing.latitude
+                               ]
+                             },
+                             properties: {
+                               description: listing.description,
+                               id: listing.id
+                             }
+                           }
+                         end
+                       }
+      end
+    end
   end
 end
