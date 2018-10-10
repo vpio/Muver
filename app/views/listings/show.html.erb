@@ -21,6 +21,15 @@
     <div>Max People: <%= @listing.max_people %></div>
 </div>
 
+<div class="starting-location-map"><% if @listing.address.present? %>
+  <%= react_component 'Map',
+      props: {
+        coordinates: [@listing.longitude, @listing.latitude],
+        centerOnUser: false
+      } %>
+<% end %>
+</div>
+
 <% if user_signed_in? %>
   <% if current_user.id != @listing.user.id %>
     <%= render 'proposals/form' %>
