@@ -19,6 +19,10 @@ class ProposalsController < ApplicationController
 
   end
 
+  def delete
+    @foobar = "hello, deleting world."
+  end
+
   private
 
   def proposal_params
