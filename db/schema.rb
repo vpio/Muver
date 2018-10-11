@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_11_185241) do
+ActiveRecord::Schema.define(version: 2018_10_11_190047) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -66,6 +66,7 @@ ActiveRecord::Schema.define(version: 2018_10_11_185241) do
     t.bigint "proposal_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "read_status", default: false
     t.index ["proposal_id"], name: "index_notifications_on_proposal_id"
     t.index ["user_id"], name: "index_notifications_on_user_id"
   end
