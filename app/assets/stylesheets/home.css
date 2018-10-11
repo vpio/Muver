@@ -1,6 +1,5 @@
 *{
-  font-family: 'Gruppo', cursive;
-
+  font-family: 'Poppins', sans-serif;
 }
 
 .btn-group .dropdown-menu  {
@@ -52,6 +51,8 @@
   padding-left: 10vw;
   padding-right: 10vw;
   display: inline-block;
+  font-family: 'Poppins', sans-serif;
+
 }
 
 .home-buttons {
@@ -71,4 +72,5 @@
 
 #first-button, #second-button {
   margin: 6rem 3rem 6rem 3rem;
+  padding: 15px;
 } 

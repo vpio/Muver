@@ -1,9 +1,9 @@
-*{
-  font-family: 'Gruppo', cursive;
+* {
+  font-family: 'Poppins', sans-serif;
   }
 
 
-a.navbar-brand nav{
+a.navbar-brand {
   font-size: 24px;
   padding-left: 1rem;
 }
