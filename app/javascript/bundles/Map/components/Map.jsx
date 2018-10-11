@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import mapboxgl from 'mapbox-gl';
 
 export default class Map extends Component {
-
   createMap = (mapOptions, geolocationOptions) => {
     this.map = new mapboxgl.Map(mapOptions);
     const { map } = this;
@@ -12,20 +11,22 @@ export default class Map extends Component {
         trackUserLocation: true
       })
     );
+    var nav = new mapboxgl.NavigationControl();
+    map.addControl(nav, 'bottom-right');
     map.on('load', (event) => {
       map.addSource(
-        'tasks',
+        'listings',
         {
           type: 'geojson',
           data: '/map.json'
         }
       );
       map.addLayer({
-        id: 'tasks',
+        id: 'listings',
         type: 'circle',
-        source: 'tasks'
+        source: 'listings'
       })
-      map.on('click', 'tasks', (e) => {
+      map.on('click', 'listings', (e) => {
        var coordinates = e.features[0].geometry.coordinates.slice();
        var description = e.features[0].properties.description;
        var id = e.features[0].properties.id;
@@ -34,13 +35,13 @@ export default class Map extends Component {
        }
        new mapboxgl.Popup()
            .setLngLat(coordinates)
-           .setHTML(`<a href="/tasks/${id}/sub_tasks">${description}</a>`)
+           .setHTML(`<a href="/listings/${id}">${description}</a>`)
            .addTo(map);
        });
-       map.on('mouseenter', 'tasks', () => {
+       map.on('mouseenter', 'listings', () => {
          map.getCanvas().style.cursor = 'pointer';
        });
-       map.on('mouseleave', 'tasks', () => {
+       map.on('mouseleave', 'listings', () => {
          map.getCanvas().style.cursor = '';
        });
     })
@@ -66,7 +67,7 @@ export default class Map extends Component {
     const mapOptions = {
       container: this.mapContainer,
       style: `mapbox://styles/mapbox/streets-v9`,
-      zoom: 12,
+      zoom: 11.15,
       center: coordinates
     }
     const geolocationOptions = {

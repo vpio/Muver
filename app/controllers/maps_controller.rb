@@ -13,24 +13,26 @@ class MapsController < ApplicationController
                     longitude: nil
                   )
         render json:  {
-                         type: "FeatureCollection",
-                         features: @listings.map do |listing|
-                           {
-                             type: "Feature",
-                             geometry: {
-                               type: "Point",
-                               coordinates: [
-                                 listing.longitude,
-                                 listing.latitude
-                               ]
-                             },
-                             properties: {
-                               description: listing.description,
-                               id: listing.id
-                             }
-                           }
-                         end
-                       }
+           type: "FeatureCollection",
+           features: @listings.map do |listing|
+             {
+               type: "Feature",
+               geometry: {
+                 type: "Point",
+                 coordinates: [
+                   listing.longitude,
+                   listing.latitude
+                 ]
+               },
+               properties: {
+                 description: "
+                 <strong>#{listing.description}: $#{listing.price}</strong></div>",
+                 icon: "star",
+                 id: listing.id
+               }
+             }
+           end
+         }
       end
     end
   end
