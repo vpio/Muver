@@ -14,19 +14,19 @@
   width: 100%;
   left: 0;
   right: 0;
-  padding-bottom: 80vw;
+  padding-bottom: 200vw;
   background:
   	linear-gradient(
-  		blue,
+  		#c6e5ec,
   		transparent
   	),
   	linear-gradient(
-  		60deg,
+  		50deg,
   		#bb2972,
   		transparent
   	),
   	linear-gradient(
-  		-60deg,
+  		-50deg,
   		#ff7546,
   		transparent
   	);
@@ -39,7 +39,7 @@
 }
 
 .intro{
-  color: #e1e6f0;
+  color: #031e63;
   text-align: justify;
   padding-top: 6vw;
   padding-left: 10vw;
@@ -58,7 +58,7 @@
 }
 
 #first-button, #second-button {
-  color: #e1e6f0;
+  color: #031e63;
   margin-bottom: 5vw;
   text-align: center;
   font-weight: bold;
