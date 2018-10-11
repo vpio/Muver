@@ -1,65 +1,93 @@
-<h1><%= @listing.description %></h1>
+<div class='show-page'>
+  <h1><strong><%= @listing.description %></strong></h1>
 
-<div>
-    <div>Moving From: <a href='http://maps.google.com/maps?q=<%= @listing.latitude %>,<%= @listing.longitude %>'><%= @listing.address %></a>
+  <table class='table listings-table table-striped'>
+    <tbody>
+      <tr>
+        <th class='row-name'scope='row'>Moving From:</th>
+        <td class='row-data'>
+          <a href='http://maps.google.com/maps?q=<%= @listing.latitude %>,<%= @listing.longitude %>'><%= @listing.address %></a>
+        </td>
+      </tr>
+      <tr>
+        <th class='row-name 'scope='row'>Moving To:</th>
+        <td class='row-data '><%= @listing.ending_address %></td>
+      </tr>
+      <tr>
+        <th class='row-name 'scope='row'>Price:</th>
+        <td class='row-data '><%= number_to_currency(@listing.price) %></td>
+      </tr>
+      <tr>
+        <th class='row-name 'scope='row'>Difficulty: </th>
+        <td class='row-data '><%= @listing.difficulty %></td>
+      </tr>
+      <tr>
+        <th class='row-name 'scope='row'>Date:</th>
+        <td class='row-data '>
+          <% unless @listing.date.length == 0 %>
+          <%= DateTime.parse(@listing.date).strftime('%A, %B %-d, %Y') %>
+          <% end %>
+        </td>
+      <tr>
+        <th class='row-name 'scope='row'>Time:</th>
+        <td class='row-data '>
+          <% unless @listing.time.length == 0 %>
+          <%= DateTime.parse(@listing.time).strftime('%-I:%M %p') %>
+          <% end %>
+        </td>
+      </tr>
+      <tr>
+        <th class='row-name 'scope='row'>Stairs:</th>
+        <td class='row-data '><%= @listing.stairs? ? 'Yes' : 'No' %></td>
+      </tr>
+      <tr>
+        <th class='row-name '>Max People:</th>
+        <td class='row-data '><%= @listing.max_people %></td>
+      </tr>
+      <tr>
+        <th class='row-name 'scope='row'>Contact:</th>
+        <td class='row-data '><%= @listing.contact %></td>
+      </tr>
+    </tbody>
+  </table>
 
-    <div>Moving To: <%= @listing.ending_address %></a>
-
-    <div>Price: <%= number_to_currency(@listing.price) %></div>
-    <div>Difficulty: <%= @listing.difficulty %></div>
-    <div>Date: <% unless @listing.date.length == 0 %>
-      <%= DateTime.parse(@listing.date).strftime('%A, %B %-d, %Y') %>
-      <% end %>
-    </div>
-    <div>Time: <% unless @listing.time.length == 0 %>
-      <%= DateTime.parse(@listing.time).strftime('%-I:%M %p') %>
-      <% end %>
-    </div>
-    <div>Contact: <%= @listing.contact %></div>
-    <div>Stairs: <%= @listing.stairs? ? 'Yes' : 'No' %>
-    </div>
-    <div>Max People: <%= @listing.max_people %></div>
-</div>
-
-<div class="starting-location-map"><% if @listing.address.present? %>
-  <%= react_component 'Map',
-      props: {
-        coordinates: [@listing.longitude, @listing.latitude],
-        centerOnUser: false
-      } %>
-<% end %>
-</div>
-
-<% if user_signed_in? %>
-  <% if current_user.id != @listing.user.id %>
-    <%= render 'proposals/form' %>
-    <hr>
+  <div class='starting-location-map'><% if @listing.address.present? %>
+    <%= react_component 'Map',
+        props: {
+          coordinates: [@listing.longitude, @listing.latitude],
+          centerOnUser: false
+        } %>
   <% end %>
+  </div>
 
-  <% if current_user.id == @listing.user.id %>
+  <% if user_signed_in? %>
+    <% if current_user.id != @listing.user.id %>
+      <%= render 'proposals/form' %>
+    <% end %>
+
+    <% if current_user.id == @listing.user.id %>
+      <div class='edit-listing-btn'>
+        <%= link_to 'Edit Your Listing', edit_listing_path, class: 'btn btn-primary' %>
+      </div>
+    <% end %>
+
+    <% @proposals.each do |p| %>
     <div>
-      <%= link_to 'Edit Your Listing', edit_listing_path, class: 'btn btn-primary' %>
+      <%= react_component 'Proposal',
+      props: {
+               proposal: p,
+               listing: @listing,
+               user: p.user
+             }
+       %>
     </div>
-    <hr>
+    <% end %>
+
   <% end %>
+
   <hr>
 
-  <% @proposals.each do |p| %>
-  <div>
-    <%= react_component 'Proposal',
-    props: {
-             proposal: p,
-             listing: @listing,
-             user: p.user
-           }
-     %>
+  <div class='btn-group btn-light back'>
+    <%= link_to 'Back', guests_path, :class => 'btn' %>
   </div>
-  <% end %>
-
-<% end %>
-
-<hr>
-
-<div class='btn-group btn-light back'>
-  <%= link_to 'Back', guests_path, :class => 'btn' %>
 </div>

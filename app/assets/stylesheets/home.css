@@ -19,19 +19,19 @@
   width: 100%;
   left: 0;
   right: 0;
-  padding-bottom: 80vw;
+  padding-bottom: 200vw;
   background:
   	linear-gradient(
-  		blue,
+  		#c6e5ec,
   		transparent
   	),
   	linear-gradient(
-  		60deg,
+  		50deg,
   		#bb2972,
   		transparent
   	),
   	linear-gradient(
-  		-60deg,
+  		-50deg,
   		#ff7546,
   		transparent
   	);
@@ -45,7 +45,6 @@
 }
 
 .intro{
-  color: #e1e6f0;
   text-align: justify;
   padding-top: 6vw;
   padding-left: 10vw;
@@ -57,7 +56,9 @@
 
 .home-buttons {
 
-  color: #e1e6f0;
+
+#first-button, #second-button {
+  margin-bottom: 5vw;
   text-align: center;
   padding-left: 50vw;
   padding-right: 50vw;
@@ -65,10 +66,6 @@
   display: flex;
   justify-content:space-around;
 }
-
-  /* #first-button { 
-  margin-top: 6vw;
-}   */
 
 #first-button, #second-button {
   margin: 6rem 3rem 6rem 3rem;
