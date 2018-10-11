@@ -36,7 +36,15 @@
   <hr>
 
   <% @proposals.each do |p| %>
-  <div><%= "#{p.user.first_name} wants to help you move! " %><%= link_to 'View Profile', user_profile_path(:id => p.user.id) %></div>
+  <div>
+    <%= react_component 'Proposal',
+    props: {
+             proposal: p,
+             listing: @listing,
+             user: p.user
+           }
+     %>
+  </div>
   <% end %>
 
 <% end %>

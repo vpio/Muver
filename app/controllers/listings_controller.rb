@@ -14,6 +14,16 @@ class ListingsController < ApplicationController
     @proposal = Proposal.new
     @proposals = Listing.find(params[:id]).proposals
     @listing = Listing.find(params[:id])
+    respond_to do |format|
+      format.html
+      format.json do
+        render json: {
+          proposal:        @proposal,
+          proposals:       @proposals,
+          listing:         @listing
+        }
+      end
+    end
   end
 
   def create
