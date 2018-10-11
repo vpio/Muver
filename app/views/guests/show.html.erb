@@ -1,27 +1,27 @@
-<h1><%= @listing.description %></h1>
+<div class="guests-page">
+  <h1><%= @listing.description %></h1>
 
-<div>
-    <div>Starting Address: <%= @listing.starting_address %></div>
-    <div>Ending Address: <%= @listing.ending_address %></div>
-    <div>Price: <%= @listing.price %></div>
-    <div>Difficulty: <%= @listing.difficulty %></div>
-    <div>Date: <%= @listing.date %></div>
-    <div>Time: <%= @listing.time %></div>
-    <div>Contact: <%= @listing.contact %></div>
-    <div>Stairs: <%= @listing.stairs %></div>
-    <div>Max People: <%= @listing.max_people %></div>
+  <div>
+      <div>Starting Address: <%= @listing.starting_address %></div>
+      <div>Ending Address: <%= @listing.ending_address %></div>
+      <div>Price: <%= @listing.price %></div>
+      <div>Difficulty: <%= @listing.difficulty %></div>
+      <div>Date: <%= @listing.date %></div>
+      <div>Time: <%= @listing.time %></div>
+      <div>Contact: <%= @listing.contact %></div>
+      <div>Stairs: <%= @listing.stairs %></div>
+      <div>Max People: <%= @listing.max_people %></div>
+  </div>
+
+  <hr>
+
+  <!-- <%# @proposals.each do |p| %>
+  <div><%#= "#{p.user.email} says: " %><%#= p.message %></div>
+  <%# end %> -->
+
+  <% if user_signed_in? %>
+    <%= render 'proposals/form' %>
+  <% end %>
+
+  <%= link_to "Back", guests_path %>
 </div>
-
-<hr>
-
-<!-- <%# @proposals.each do |p| %>
-<div><%#= "#{p.user.email} says: " %><%#= p.message %></div>
-<%# end %> -->
-
-<% if user_signed_in? %>
-  <%= render 'proposals/form' %>
-<% end %>
-
-
-
-<%= link_to "Back", guests_path %>
