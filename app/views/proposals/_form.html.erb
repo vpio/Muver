@@ -3,7 +3,7 @@
     <div class="form-group">
       <%= form.hidden_field :user_id, value: current_user.id %>
       <%= form.hidden_field :listing_id, value: @listing.id %>
-      <%= form.hidden_field :approved, value: true %>
+      <%= form.hidden_field :approved, value: false %>
     </div>
     <div class="actions">
       <% if (@listing.proposals.where(user_id: current_user.id).count >= 1) %>
