@@ -1,45 +1,29 @@
 import React from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import MiniProfile from './MiniProfile'
+import axios from 'axios';
 
-class ListingsModal extends React.Component {
-  constructor(props) {
-     super(props);
-     this.state = {
-       modal: false,
-       user: this.props.user
-     };
+const ListingsModal = props => {
 
-     this.toggle = this.toggle.bind(this);
-   }
 
-   toggle() {
-     this.setState({
-       modal: !this.state.modal
-     });
-   }
-
-   render() {
-     const { user } = this.state;
      return (
        <div>
-         {console.log("hello", user)}
-         <Button color="primary" onClick={this.toggle}>View Profile</Button>
-         <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
-           <ModalHeader toggle={this.toggle}>Modal title</ModalHeader>
+         <Button color="primary" onClick={props.toggle}>View Profile</Button>
+         <Modal isOpen={props.modal} toggle={props.toggle} className={props.className}>
+           <ModalHeader toggle={props.toggle}>Modal title</ModalHeader>
            <ModalBody>
              <MiniProfile
-               user={user}
+               user={props.user}
                />
            </ModalBody>
            <ModalFooter>
-             <Button color="primary" onClick={this.toggle}>Do Something</Button>{' '}
-             <Button color="secondary" onClick={this.toggle}>Cancel</Button>
+             <Button color="primary" onClick={() => props.approveProposal(props.listing, props.proposal)}>Approve</Button>
+             <Button color="secondary" onClick={props.toggle}>Cancel</Button>
            </ModalFooter>
          </Modal>
        </div>
      );
    }
-}
+
 
 export default ListingsModal;

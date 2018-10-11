@@ -1,5 +1,7 @@
 class ProposalsController < ApplicationController
 
+  skip_before_action :verify_authenticity_token
+
   def new
     @proposal = Proposal.new
   end
@@ -8,6 +10,13 @@ class ProposalsController < ApplicationController
     @proposal = Proposal.new(proposal_params)
     @proposal.save
     redirect_to request.referrer
+  end
+
+  def update
+    @proposal = Proposal.find(params[:id])
+    @proposal.update(approved: params[:proposal][:approved]) if params[:proposal][:approved]
+    @proposal.save!
+
   end
 
   private

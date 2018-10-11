@@ -9,6 +9,7 @@ gem 'devise-bootstrap-views', '~> 1.0'
 gem 'geocoder'
 gem 'webpacker'
 gem 'react_on_rails'
+gem 'pry'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.1'
