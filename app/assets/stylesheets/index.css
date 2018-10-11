@@ -1,10 +1,20 @@
-.page-title{
-  font-family: 'Poppins', sans-serif, bold;
+*{
+  font-family: 'Gruppo', cursive;
+  }
+
+
+a.navbar-brand nav{
+  font-size: 24px;
+  padding-left: 1rem;
 }
+
+ nav{
+   font-size: 24px; 
+} 
 
 body{
   background-color: lightblue;
-  color: rgb(59, 74, 90);
+  color: rgb(49, 62, 77);
 }
 
 h1{
