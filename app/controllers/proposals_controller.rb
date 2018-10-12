@@ -19,8 +19,11 @@ class ProposalsController < ApplicationController
 
   end
 
-  def delete
-    @foobar = "hello, deleting world."
+  def destroy
+    @proposal = Proposal.find(params[:id])
+    @proposal.destroy
+
+    # redirect_back(fallback_location: root_path)
   end
 
   private

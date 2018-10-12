@@ -3,17 +3,14 @@
     <div class="form-group">
       <%= form.hidden_field :user_id, value: current_user.id %>
       <%= form.hidden_field :listing_id, value: @listing.id %>
-      <%= form.hidden_field :approved, value: true %>
+      <%= form.hidden_field :approved, value: false %>
     </div>
     <div class="actions">
-      <% if (@listing.proposals.where(user_id: current_user.id).count >= 1) %>
-      <% else %>
-      <%= form.submit "Sign Me Up!", class: "btn btn-primary" %>
-      <% end %>
+      <%= form.submit "Sign Me Up!", class: "btn btn-primary" unless (@listing.proposals.where(user_id: current_user.id).count >= 1) %>
     </div>
   <% else %>
     <div class="actions">
-    <%= link_to "Sign Me Up!", new_user_session_path, class: "btn btn-primary" %>
+      <%= link_to "Sign Me Up!", new_user_session_path, class: "btn btn-primary" %>
     </div>
   <% end %>
 <% end %>

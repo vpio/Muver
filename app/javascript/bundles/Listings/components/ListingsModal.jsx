@@ -9,7 +9,7 @@ const ListingsModal = props => {
      return (
        <div>
          <Button color="primary" onClick={props.toggle}>View Profile</Button>
-         <Button color="primary" onClick={props.toggle}>Delete</Button>
+         <Button color="primary" onClick={() => props.deleteProposal(props.listing, props.proposal)}>Delete</Button>
          <Modal isOpen={props.modal} toggle={props.toggle} className={props.className}>
            <ModalHeader toggle={props.toggle}>Modal title</ModalHeader>
            <ModalBody>
