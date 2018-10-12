@@ -6,10 +6,11 @@ Rails.application.routes.draw do
   get 'users/:id' => 'users#show', as: :user_profile
   get 'users/:id/pic' => 'users#new', as: :user_avatar
   post 'users/:id/pic' => 'users#create'
+  # delete '/listings/:id/proposals/' => 'proposals#destroy', as: :proposals_delete
 
   resources :guests, only: [:index, :show]
   resources :listings do
-    resources :proposals, only: [:update]
+    resources :proposals, only: [:update, :destroy]
   end
 
   resource :proposals
