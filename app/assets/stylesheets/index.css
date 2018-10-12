@@ -30,3 +30,7 @@ h1{
   flex-direction: column;
   padding-bottom: 5em;
 }
+
+.hide-cards{
+  display: none;
+}
