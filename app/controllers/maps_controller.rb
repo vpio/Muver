@@ -6,12 +6,7 @@ class MapsController < ApplicationController
         @coordinates = [0.0, 0.0] if @coordinates.empty?
       end
       format.json do
-        @listings = current_user
-                  .listings
-                  .where.not(
-                    latitude: nil,
-                    longitude: nil
-                  )
+        @listings = Listing.all
         render json:  {
            type: "FeatureCollection",
            features: @listings.map do |listing|

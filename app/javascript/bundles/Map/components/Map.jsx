@@ -2,9 +2,20 @@ import React, { Component } from 'react';
 import mapboxgl from 'mapbox-gl';
 
 export default class Map extends Component {
+
+  fetchTasks = () => {
+    const map = this.map;
+    const { lat, lng } = map.getCenter();
+    axios.get(`/map.json?lat=${lat}&lng=${lng}`)
+      .then((response) => { map.getSource('tasks').setData(response.data) })
+      .catch((error) => { console.log(error) });
+  }
+
+
   createMap = (mapOptions, geolocationOptions) => {
     this.map = new mapboxgl.Map(mapOptions);
     const { map } = this;
+    const { lat, lng } = map.getCenter();
     map.addControl(
       new mapboxgl.GeolocateControl({
         positionOptions: geolocationOptions,
@@ -18,7 +29,7 @@ export default class Map extends Component {
         'listings',
         {
           type: 'geojson',
-          data: '/map.json'
+          data: `/map.json?lat=${lat}&lng=${lng}`
         }
       );
       map.addLayer({
@@ -38,12 +49,13 @@ export default class Map extends Component {
            .setHTML(`<a href="/listings/${id}">${description}</a>`)
            .addTo(map);
        });
-       map.on('mouseenter', 'listings', () => {
+       map.on('mouseenter', 'tasks', () => {
          map.getCanvas().style.cursor = 'pointer';
        });
-       map.on('mouseleave', 'listings', () => {
+       map.on('mouseleave', 'tasks', () => {
          map.getCanvas().style.cursor = '';
        });
+       map.on('moveend', () => { this.fetchTasks() });
     })
   }
 
