@@ -5,26 +5,26 @@ import axios from 'axios';
 
 const ListingsModal = props => {
 
+  return (
+   <div>
+     <Button color="primary" onClick={props.toggle} className="view-profile-btn">View Profile</Button>
+     <Button color="primary" onClick={() => props.deleteProposal(props.listing, props.proposal)}>Delete</Button>
+     <Modal isOpen={props.modal} toggle={props.toggle} className={props.className}>
+       <ModalHeader toggle={props.toggle}>Request</ModalHeader>
+       <ModalBody>
+         <MiniProfile
+           user={props.user}
+           />
+       </ModalBody>
+       <ModalFooter>
+         <Button color="primary" onClick={() => props.approveProposal(props.listing, props.proposal)}>Approve</Button>
+         <Button color="danger" onClick={props.toggle}>Decline</Button>
+       </ModalFooter>
+     </Modal>
+   </div>
+ );
+}
 
-     return (
-       <div>
-         <Button color="primary" onClick={props.toggle}>View Profile</Button>
-         <Button color="primary" onClick={() => props.deleteProposal(props.listing, props.proposal)}>Delete</Button>
-         <Modal isOpen={props.modal} toggle={props.toggle} className={props.className}>
-           <ModalHeader toggle={props.toggle}>Modal title</ModalHeader>
-           <ModalBody>
-             <MiniProfile
-               user={props.user}
-               />
-           </ModalBody>
-           <ModalFooter>
-             <Button color="primary" onClick={() => props.approveProposal(props.listing, props.proposal)}>Approve</Button>
-             <Button color="secondary" onClick={props.toggle}>Cancel</Button>
-           </ModalFooter>
-         </Modal>
-       </div>
-     );
-   }
 
 
 export default ListingsModal;

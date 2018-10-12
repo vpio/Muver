@@ -1,6 +1,11 @@
+*{
+  font-family: 'Poppins', sans-serif;
+}
+
 .btn-group .dropdown-menu  {
   background-color: #f8f9fa;
   color: rgba(0,0,0,.5);
+  
 }
 
 .btn-group button  {
@@ -14,24 +19,25 @@
   width: 100%;
   left: 0;
   right: 0;
-  padding-bottom: 80vw;
+  padding-bottom: 200vw;
   background:
   	linear-gradient(
-  		blue,
+  		#c6e5ec,
   		transparent
   	),
   	linear-gradient(
-  		60deg,
+  		50deg,
   		#bb2972,
   		transparent
   	),
   	linear-gradient(
-  		-60deg,
+  		-50deg,
   		#ff7546,
   		transparent
   	);
   background-blend-mode: screen;
-  font-family: 'Poppins', sans-serif, bold;
+  font-family: 'Gruppo', cursive;
+
 }
 
 .alert {
@@ -39,27 +45,29 @@
 }
 
 .intro{
-  color: #e1e6f0;
   text-align: justify;
   padding-top: 6vw;
   padding-left: 10vw;
   padding-right: 10vw;
   display: inline-block;
+  font-family: 'Poppins', sans-serif;
+
 }
 
-.container-home {
+.home-buttons {
+
+
+#first-button, #second-button {
+  margin-bottom: 5vw;
   text-align: center;
-  padding-left: 30vw;
-  padding-right: 30vw;
-}
-
-#first-button {
-  margin-top: 6vw;
+  padding-left: 50vw;
+  padding-right: 50vw;
+  font-weight: bold;
+  display: flex;
+  justify-content:space-around;
 }
 
 #first-button, #second-button {
-  color: #e1e6f0;
-  margin-bottom: 5vw;
-  text-align: center;
-  font-weight: bold;
-}
+  margin: 6rem 3rem 6rem 3rem;
+  padding: 15px;
+} 
