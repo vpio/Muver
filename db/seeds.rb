@@ -8,6 +8,39 @@
 
 password = "password"
 
+wynwood_coordinates = [
+[25.72196528, -80.20601336],
+[25.79347939, -80.30104386],
+[25.80126448, -80.07290843],
+[25.77779978, -80.18783481],
+[25.68441953, -80.21778371],
+[25.87846807, -80.10992526],
+[25.81151602, -80.19634111],
+[25.69804987, -80.28630465],
+[25.68178218, -80.15676618],
+[25.71551117, -80.25745307],
+[25.71592586, -80.28388534],
+[25.67687612, -80.25621804],
+[25.92468994, -80.27541778],
+[25.7738864, -80.2964971],
+[25.80649133, -80.06448751],
+[25.72269178, -80.17213404],
+[25.8828442, -80.19961707],
+[25.67084287, -80.1593109],
+[25.89645404, -80.27585783],
+[25.8596977, -80.08422581],
+[25.75092433, -80.23548213],
+[25.82421585, -80.30114456],
+[25.76514552, -80.22275743],
+[25.83422373, -80.25132991],
+[25.70836542, -80.27679206],
+[25.71449908, -80.29799274],
+[25.72118131, -80.13879834],
+[25.83471731, -80.34523803],
+[25.7819128, -80.10262791],
+[25.81572237, -80.09939562]
+]
+
 
 user  = User.create!(
           email:    "someguy@fake.edu",
@@ -29,7 +62,10 @@ user  = User.create!(
              )
   userfake.avatar.attach(io: file, filename: "temp.#{file.content_type_parse.first.split("/").last}", content_type: file.content_type_parse.first)
 
-  2.times do
+  1.times do
+    lat_long = wynwood_coordinates.shift
+    latitude = lat_long[0]
+    longitude = lat_long[1]
     description = Faker::SiliconValley.motto
     startaddress = Faker::Address.full_address
     city = Faker::Address.city
@@ -54,7 +90,9 @@ user  = User.create!(
       stairs: stairs,
       contact: email,
       time: time,
-      max_people: maxpeople
+      max_people: maxpeople,
+      latitude: latitude,
+      longitude: longitude
     )
   end
 
