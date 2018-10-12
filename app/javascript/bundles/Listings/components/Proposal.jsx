@@ -13,13 +13,6 @@ class Proposal extends React.Component{
     }
   }
 
-  async componentDidMount(listing) {
-    // let data;
-    // data = await axios.get(`/listings/1/proposals`)
-    console.log(`data coming`)
-    console.log(this.state.proposals)
-  }
-
   approveProposal = (listing, proposal) => {
     axios.put(`/listings/${listing}/proposals/${proposal.id}.html`, {approved: !proposal.approved})
      this.toggle()
