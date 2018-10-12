@@ -8,7 +8,7 @@ a.navbar-brand {
   padding-left: 1.2vw;
 }
 
-nav{
+ nav{
    font-size: 24px;
 }
 
@@ -29,4 +29,8 @@ h1{
   display: flex;
   flex-direction: column;
   padding-bottom: 5em;
+}
+
+.hide-cards{
+  display: none;
 }
