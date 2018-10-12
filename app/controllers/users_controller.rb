@@ -10,7 +10,7 @@ class UsersController < ApplicationController
 
   def create
     current_user.avatar.attach(params[:avatar])
-    redirect_to 'user_profile_path'
+    redirect_to user_profile_path
   end
 
   private
