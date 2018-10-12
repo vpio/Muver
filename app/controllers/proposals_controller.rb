@@ -16,7 +16,12 @@ class ProposalsController < ApplicationController
     @proposal = Proposal.find(params[:id])
     @proposal.update(approved: params[:proposal][:approved]) if params[:proposal][:approved]
     @proposal.save!
+  end
 
+  def destroy
+    @proposal = Proposal.find(params[:id])
+    @proposal.destroy
+    redirect_to @proposal.listing
   end
 
   private

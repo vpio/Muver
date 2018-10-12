@@ -71,6 +71,8 @@
       </div>
     <% end %>
 
+
+
     <% @proposals.each do |p| %>
     <div class='approval-message'>
       <%= react_component 'Proposal',
@@ -80,6 +82,9 @@
                user: p.user
              }
        %>
+       <% if current_user.id == p.user_id %>
+         <%= button_to "Delete this proposal", [@listing, p], method: :delete %>
+       <% end %>
     </div>
     <% end %>
   <% end %>
