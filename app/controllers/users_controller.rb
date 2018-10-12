@@ -10,12 +10,11 @@ class UsersController < ApplicationController
 
   def create
     current_user.avatar.attach(params[:avatar])
-    redirect_to "/users/#{current_user.id}"
+    redirect_to 'user_profile_path'
   end
 
   private
    def user_avatar
      params.require(:user).permit(:avatar)
    end
-
 end
