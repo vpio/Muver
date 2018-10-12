@@ -83,19 +83,6 @@
     </div>
     <% end %>
 
-
-  <% @proposals.each do |p| %>
-    <div>
-      <%= react_component 'Proposal',
-      props: {
-               proposal: p,
-               listing: @listing,
-               user: p.user,
-               proposals: @allProposals
-             }
-       %>
-    </div>
-
   <% end %>
 
   <hr>

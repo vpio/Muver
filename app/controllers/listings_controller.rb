@@ -14,7 +14,6 @@ class ListingsController < ApplicationController
     @proposal = Proposal.new
     @proposals = Listing.find(params[:id]).proposals
     @listing = Listing.find(params[:id])
-    @allProposals = Listing.find(params[:id]).proposals.map{|proposal| proposal.user }
     respond_to do |format|
       format.html
       format.json do
