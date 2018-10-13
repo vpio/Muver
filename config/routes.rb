@@ -13,7 +13,7 @@ Rails.application.routes.draw do
     resources :proposals, only: [:update, :destroy]
   end
 
-  resources :notifications, only: [:update]
+  resources :notifications, only: [:update, :index, :destroy]
 
   resource :proposals
   resource :map, only: [:show]
