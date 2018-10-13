@@ -1,7 +1,7 @@
 <ul class='navbar-nav ml-auto'>
   <li class='nav-item dropdown'>
     <% if current_user.notifications.where(read_status: false).any? %>
-      <a class='nav-link far fa-bell mt-1 light-up' id='navbarDropdown' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false' ></a>
+      <a class='nav-link far fa-bell mt-1 light-up shake' id='navbarDropdown' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false' ></a>
     <% else %>
       <a class='nav-link far fa-bell mt-1' id='navbarDropdown' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false' ></a>
     <% end %>
