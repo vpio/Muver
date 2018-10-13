@@ -72,3 +72,8 @@
   margin: 6rem 3rem 6rem 3rem;
   padding: 15px;
 }
+
+.light-up{
+  color: red;
+  background-color: red;
+}

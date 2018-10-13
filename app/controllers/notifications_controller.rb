@@ -4,9 +4,15 @@ class NotificationsController < ApplicationController
 
   def create
     @notification = Proposal.notifications.new(message: "This is a notification my brosef")
-    @proposal = 
+    @proposal =
     @user = Proposal.find(:id).listing.user
     @notification.save!
+  end
+
+  def update
+    @notification_edit = current_user.notifications.find(params[:id])
+    @notification_edit.update(read_status: true)
+    redirect_to listing_path(@notification_edit.proposal.listing.id)
   end
 
 

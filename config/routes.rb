@@ -13,6 +13,8 @@ Rails.application.routes.draw do
     resources :proposals, only: [:update, :destroy]
   end
 
+  resources :notifications, only: [:update]
+
   resource :proposals
   resource :map, only: [:show]
   resource :jobs, only: [:show]
