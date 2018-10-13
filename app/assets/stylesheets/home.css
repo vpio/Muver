@@ -21,8 +21,6 @@
 }
 
 .home-page {
-  position: fixed;
-  overflow: auto;
   width: 100%;
   left: 0;
   right: 0;
@@ -71,4 +69,22 @@
 #first-button, #second-button {
   margin: 6rem 3rem 6rem 3rem;
   padding: 15px;
+}
+
+.pics_container{
+  text-align: center;
+}
+.pics{
+  width: 300px;
+  padding: 10px;
+}
+.center {
+    justify-content: center;
+    text-align: center;
+}
+
+.footer-ul { 
+  list-style-type: none;
+ justify-content: flex-start;
+ width: 33%;
 }
