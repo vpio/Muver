@@ -8,7 +8,7 @@ a.navbar-brand {
   padding-left: 1.2vw;
 }
 
- nav{
+nav{
    font-size: 24px;
 }
 
@@ -21,6 +21,10 @@ h1{
   padding: 1em;
   text-align: center;
 }
+.new-move-button {
+  padding-top: 20px;
+}
+
 .card-shadow{
   box-shadow: 5px 5px rgb(59, 74, 90);
 }
@@ -33,4 +37,25 @@ h1{
 
 .hide-cards{
   display: none;
+}
+
+.btn-light {
+  margin: 2em;
+}
+.job-container {
+  display: flex;
+  column-count: 2;
+  justify-content: space-evenly;
+}
+
+.job-container2 {
+  display: flex;
+  column-count: 2;
+  justify-content: space-evenly;
+  margin-top: 4em;
+  }
+
+.job_pic {
+  width: 250px;
+  height: 250px;
 }

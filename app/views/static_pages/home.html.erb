@@ -1,22 +1,28 @@
 <div class='home-page'>
-  <h1 class='intro'>Whether you need assistance with a move or you want to earn extra income helping someone move, Müver can connect you!</h1>
+  <h1 class='intro'>Whether you need assistance with a move or you want to earn extra income helping someone move, Müver  can connect you!</h1>
+
+
+    <div class="png_container">
+      <%= image_tag "image3.png", class:'man'%>
+    </div> 
+
   <div class="home-buttons">
   
     <div class="container-home">
       <%= link_to 'Create A Listing', new_listing_path, id: "first-button", class: "btn btn-outline-dark btn-lg"%>
     </div>
-
+     
     <div class="container-home">
       <%= link_to 'Browse Listings', guests_path, id: "second-button", class: "btn btn-outline-dark btn-lg"%>
     </div>
-  </div>
 
-<div class="pics_container">
-  <%= image_tag "pick-four.jpg", class: 'pics'%>
-  <%= image_tag "pick-two.jpg", class: 'pics'%>
-  <%= image_tag "pick-three.jpg", class: 'pics'%>
+    </div>
 
-</div>
+    <div class="pics_container">
+      <%= image_tag "pick-four.jpg", class: 'pics'%>
+      <%= image_tag "pick-two.jpg", class: 'pics'%>
+      <%= image_tag "pick-three.jpg", class: 'pics'%>
+    </div>
 
 <footer class="container-footer">
 <div class="row center">
@@ -37,10 +43,6 @@
   </ul>
   
 </div>
-
-
-
-
 
 
 </footer>
