@@ -96,7 +96,7 @@ export default class Map extends Component {
       elm.className = "mapbox-marker"
       let popup = new mapboxgl.Popup({ offset: 25 })
       .setHTML(
-        `<a>${listing.properties.description}</a> `
+        `<a href="./listings/${listing.properties.id}">${listing.properties.description}</a>`
       )
       let marker = new mapboxgl.Marker(elm)
       .setLngLat(listing.geometry.coordinates)
