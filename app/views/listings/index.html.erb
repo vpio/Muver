@@ -1,5 +1,5 @@
 <div class='my-listings'>
-  <h1>My Listings</h1>
+  <span><h1><i class="fas fa-box-open"></i></i> My Listings</h1></span>
 
   <% @listings.each do |l| %>
     <div class='row'>
@@ -26,4 +26,9 @@
   <div class='btn-group btn-light'>
     <%= link_to 'New Move', new_listing_path, :class => 'btn' %>
   </div>
+
+  <div class="pics_container">
+     <%= image_tag "pink_blue.jpg", class: 'pics'%>
+  </div>
+
 </div>
