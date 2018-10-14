@@ -1,14 +1,12 @@
 Rails.application.routes.draw do
-  devise_for :users, :controllers => { registrations: 'registrations' }
-
   root 'static_pages#home'
+  devise_for :users, :controllers => { registrations: 'registrations' }
 
   get 'users/:id' => 'users#show', as: :user_profile
   get 'users/:id/pic' => 'users#new', as: :user_avatar
   post 'users/:id/pic' => 'users#create'
   # delete '/listings/:id/proposals/' => 'proposals#destroy', as: :proposals_delete
 
-  resources :guests, only: [:index, :show]
   resources :listings do
     resources :proposals, only: [:update, :destroy]
   end
@@ -16,6 +14,9 @@ Rails.application.routes.draw do
   resources :users do
     resources :messages, only: [:create, :index]
   end
+
+  resources :guests, only: [:index, :show]
+  resources :notifications, only: [:update, :index, :destroy]
 
   resource :proposals
   resource :map, only: [:show]

@@ -1,0 +1,20 @@
+<div class="mt-5">
+<table class='table listings-table table-striped'>
+  <tbody>
+    <% @notifications_all.each do |n| %>
+      <tr>
+        <th class='row-name'scope='row'>Message:</th>
+        <td class='row-data'>
+          <%=n.message%>
+        </td>
+        <td class='row-data'>
+          <%= button_to 'Approve', [@notification, n], method: :put, class:"btn btn-primary" %>
+        </td>
+        <td class='row-data'>
+          <%= button_to 'Delete Notification', [@notification_delete, n], method: :delete, class:"btn btn-danger" %>
+        </td>
+
+      </tr>
+    <% end %>
+</table>
+</div>

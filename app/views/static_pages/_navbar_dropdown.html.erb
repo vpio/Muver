@@ -1,8 +1,13 @@
 <ul class='navbar-nav ml-auto'>
   <li class='nav-item dropdown'>
-    <a class='nav-link far fa-bell mt-1' id='navbarDropdown' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false' ></a>
+    <% if current_user.notifications.where(read_status: "false").any? %>
+      <a class='nav-link far fa-bell mt-1 light-up shake' id='navbarDropdown' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false' ></a>
+    <% else %>
+      <a class='nav-link far fa-bell mt-1' id='navbarDropdown' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false' ></a>
+    <% end %>
     <div class='dropdown-menu dropdown-menu-right' aria-labelledby='navbarDropdown'>
       <%= show_notifications %>
+      <%= link_to "View All", notifications_path, class: "dropdown-item" %>
     </div>
   </li>
   <li class='nav-item dropdown'>
@@ -12,7 +17,7 @@
     <div class='dropdown-menu dropdown-menu-right' aria-labelledby='navbarDropdown'>
       <%= link_to 'My Listings', listings_path, class: 'dropdown-item' %>
       <%= link_to 'My Jobs', jobs_path, class: 'dropdown-item' %>
-      <%= link_to 'Profile', user_profile_path(current_user.id), class: 'dropdown-item' %>
+      <%= link_to 'Profile', "/users/#{current_user.id}", class: 'dropdown-item' %>
       <%= link_to 'Account Settings', edit_user_registration_path, class: 'dropdown-item' %>
       <div class='dropdown-divider'></div>
       <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'dropdown-item' %>

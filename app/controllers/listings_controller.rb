@@ -1,5 +1,6 @@
 class ListingsController < ApplicationController
   before_action :store_user_location!, if: :storable_location?
+  skip_before_action :verify_authenticity_token
 
   def index
     @listings = current_user.listings
@@ -60,6 +61,6 @@ class ListingsController < ApplicationController
   end
 
   def listing_params
-    params.require(:listing).permit(:description, :starting_address, :ending_address, :price, :difficulty, :date, :time, :contact, :stairs, :max_people, :street, :city, :state, :zipcode)
+    params.require(:listing).permit(:description, :starting_address, :ending_address, :price, :difficulty, :date, :time, :contact, :stairs, :max_people, :street, :city, :state, :zipcode, :proposal)
   end
 end

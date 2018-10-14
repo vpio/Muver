@@ -16,12 +16,11 @@ const ListingsModal = props => {
        </ModalBody>
        <ModalFooter>
          <Button color="primary" onClick={() => props.approveProposal(props.listing, props.proposal)}>Approve</Button>
-         <Button color="danger" onClick={props.toggle}>Decline</Button>
+         <Button color="danger" onClick={() => props.readStatusTrue(props.notification)}>Decline</Button>
        </ModalFooter>
      </Modal>
    </div>
  );
 }
-
 
 export default ListingsModal;
