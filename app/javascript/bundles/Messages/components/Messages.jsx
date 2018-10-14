@@ -48,7 +48,7 @@ export default class Messages extends Component {
           {
             messages.map((message) => {
               return(
-                <ul className='collection'>
+                <ul className='collection' key={message.id}>
                   <li className='chat-individual-message-box collection-item avatar' key={message.id}>
                     <img src="//robohash.org/107378?set=set2&bgset=bg2&size=70x70" alt="107378" className="circle" />
                     <span className='chat-user-name'>
