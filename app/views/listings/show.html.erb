@@ -86,9 +86,11 @@
                proposal: p,
                listing: @listing,
                user: p.user,
-               notification: p.notification
+               notification: p.notification,
+               avatar: User.find(p.user.id).avatar.filename
              }
        %>
+       <%= User.find(p.user.id).avatar.record_id %>
        <% if current_user.id == p.user_id %>
          <%= button_to "Delete this proposal", [@listing, p], method: :delete, class:'btn btn-danger ml-2' %>
        <% end %>

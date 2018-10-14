@@ -3,6 +3,14 @@ class UsersController < ApplicationController
   def show
     authenticate_user!
     @user = User.find(params[:id])
+    respond_to do |format|
+      format.html
+      format.json do
+        render json: {
+          user:        @user
+        }
+      end
+    end
   end
 
   def new
