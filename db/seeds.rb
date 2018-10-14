@@ -44,7 +44,9 @@ wynwood_coordinates = [
 
 user  = User.create!(
           email:    "someguy@fake.edu",
-          password: password
+          password: password,
+          first_name: "John",
+          last_name: "Doe"
         )
 
 
