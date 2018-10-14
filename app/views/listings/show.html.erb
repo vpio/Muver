@@ -77,7 +77,8 @@
       props: {
                proposal: p,
                listing: @listing,
-               user: p.user
+               user: p.user,
+               notification: p.notification
              }
        %>
        <% if current_user.id == p.user_id %>

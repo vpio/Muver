@@ -8,7 +8,7 @@
           <%=n.message%>
         </td>
         <td class='row-data'>
-          <%= button_to 'Approve', listing_path(n.proposal.listing.id), method: :get, class:"btn btn-primary" %>
+          <%= button_to 'Approve', [@notification, n], method: :put, class:"btn btn-primary" %>
         </td>
         <td class='row-data'>
           <%= button_to 'Delete Notification', [@notification_delete, n], method: :delete, class:"btn btn-danger" %>

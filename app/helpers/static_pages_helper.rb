@@ -2,7 +2,7 @@ module StaticPagesHelper
   def show_notifications
     content_tag(:p, "hello")
     notifications = current_user.notifications.map do |n|
-      if n.read_status == false
+      if n.read_status == "false"
         content_tag(:p, (link_to n.message, [@notification, n], method: :put), class:"dropdown-item")
       end
     end

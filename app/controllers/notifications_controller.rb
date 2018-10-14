@@ -15,7 +15,11 @@ class NotificationsController < ApplicationController
 
   def update
     @notification_edit = current_user.notifications.find(params[:id])
-    @notification_edit.update(read_status: true)
+    if @notification_edit.read_status == "reading"
+      @notification_edit.update(read_status: "true")
+    else
+      @notification_edit.update(read_status: "reading")
+    end
     redirect_to listing_path(@notification_edit.proposal.listing.id)
   end
 

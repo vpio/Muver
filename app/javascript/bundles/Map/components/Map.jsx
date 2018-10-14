@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import mapboxgl from 'mapbox-gl';
+import axios from 'axios';
 
 export default class Map extends Component {
 
