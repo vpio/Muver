@@ -69,7 +69,7 @@
       <div class='edit-listing-btn'>
         <%= link_to 'Edit Your Listing', edit_listing_path, class: 'btn btn-primary' %>
       </div>
-    <% end %>
+
 
     <% @proposals.each do |p| %>
     <div class='approval-message'>
@@ -77,13 +77,22 @@
       props: {
                proposal: p,
                listing: @listing,
-               user: p.user
+               user: p.user,
+               notification: p.notification
              }
        %>
        <% if current_user.id == p.user_id %>
          <%= button_to "Delete this proposal", [@listing, p], method: :delete, class:'btn btn-danger ml-2' %>
        <% end %>
     </div>
+    <% end %>
+    <% else %>
+      <% @proposals.each do |p| %>
+        <% if current_user.id == p.user_id %>
+          <h4>You have offered to help with this move.</h4>
+          <%= button_to "Delete your proposal", [@listing, p], method: :delete, class:'btn btn-danger ml-2' %>
+        <% end %>
+      <% end %>
     <% end %>
   <% end %>
 
