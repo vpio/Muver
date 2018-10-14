@@ -49,10 +49,10 @@ export default class Map extends Component {
            .setHTML(`<a href="/listings/${id}">${description}</a>`)
            .addTo(map);
        });
-       map.on('mouseenter', 'tasks', () => {
+       map.on('mouseenter', 'listings', () => {
          map.getCanvas().style.cursor = 'pointer';
        });
-       map.on('mouseleave', 'tasks', () => {
+       map.on('mouseleave', 'listings', () => {
          map.getCanvas().style.cursor = '';
        });
        map.on('moveend', () => { this.fetchTasks() });
