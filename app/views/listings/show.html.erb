@@ -45,8 +45,10 @@
         <td class='row-data '><%= @listing.max_people %></td>
       </tr>
       <tr>
-        <th class='row-name 'scope='row'>Contact:</th>
-        <td class='row-data '><%= @listing.contact %></td>
+        <th class='row-name' scope='row'>Contact:</th>
+        <td class='row-data'>
+          <%= link_to "Send a message", user_messages_path(@listing.user_id), class:'btn btn-light' %>
+        </td>
       </tr>
     </tbody>
   </table>
