@@ -1,6 +1,6 @@
 class Proposal < ApplicationRecord
 
-    after_save :create_notification
+  after_create :create_notification
 
 
   belongs_to :user
