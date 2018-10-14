@@ -18,7 +18,6 @@ class ProposalsController < ApplicationController
     @proposal.update(approved: params[:proposal][:approved]) if params[:proposal][:approved]
     @proposal.save!
     puts "=========== the update happened"
-
   end
 
   def destroy

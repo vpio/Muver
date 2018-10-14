@@ -5,6 +5,7 @@ class Proposal < ApplicationRecord
   belongs_to :listing
   has_one :notification, dependent: :destroy
 
+
   def create_notification
     notification = Notification.new(message:"#{Proposal.last.user.first_name} wants to help you move!")
     notification.proposal = Proposal.last
