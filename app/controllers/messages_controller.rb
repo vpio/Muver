@@ -15,10 +15,10 @@ class MessagesController < ApplicationController
     @channel = "messages:#{[@user.id, current_user.id].sort.join(':')}"
     respond_to do |format|
       format.html do
-        @message  = Message.new
+        @message = Message.new
       end
       format.json do
-        render json:  @messages.map{|m| m.attributes.merge(sender: m.sender.attributes, recipient: m.recipient.attributes) }
+        render json: @messages.map{|m| m.attributes.merge(sender: m.sender.attributes, recipient: m.recipient.attributes) }
       end
     end
   end

@@ -4,14 +4,14 @@ class Message < ApplicationRecord
 
   after_create_commit :broadcast_message
 
-  scope :between, ->  (profile_1, profile_2) do
-                        where(
-                          "(sender_id = :profile_1_id AND recipient_id = :profile_2_id) OR
-                          (sender_id = :profile_2_id AND recipient_id = :profile_1_id)",
-                          profile_1_id: profile_1.id,
-                          profile_2_id: profile_2.id
-                        )
-                      end
+  scope :between, ->  (user_1, user_2) do
+    where(
+      "(sender_id = :user_1_id AND recipient_id = :user_2_id) OR
+      (sender_id = :user_2_id AND recipient_id = :user_1_id)",
+      user_1_id: user_1.id,
+      user_2_id: user_2.id
+    )
+  end
 
   private
 

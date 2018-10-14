@@ -1,26 +1,50 @@
 .chat {
-  margin-left: 10vw;
-  margin-right: 10vw;
+  background: #EEEEEE;
 }
 
-.chat-message-box {
-  height: 50vh;
+ .chat-message-box {
   overflow-y: scroll;
+  height: 60vh;
 }
 
-.chat-individual-message-box {
-  display: flex;
+.form-control.chat-input-box {
+  padding-left: 1vw;
+  background-color: white;
 }
 
-.chat-username {
-  display: flex;
+.footer-input {
+  width: 100%;
+  border-color: #FFFFFF;
+  background-color: #409388;
+  bottom: 0;
+  height: 85px;
 }
 
-.chat-message {
-  margin
+.prefix.mdi-communication-chat {
+  color: white;
 }
 
-.chat-input-box {
-  padding-top: 2vw;
-  padding-bottom: 2vw;
+.chip {
+  font-style: italic;
+  max-width: 80%;
+  min-width: 50%;
+}
+
+.message-date {
+  color: #585858;
+}
+
+.input-field.col.s2 {
+  flex-grow: 0;
+  margin-left: 0;
+  bottom: 0;
+}
+
+.collection {
+ margin-bottom:1px;
+ margin-top: -1px;
+}
+
+.btn-group.btn-light.back {
+  margin-top: 5vw;
 }

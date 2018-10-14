@@ -6,13 +6,16 @@ export default class Messages extends Component {
   constructor(){
     super()
     window.messages = this;
-    this.state = { messages: [], message: '' }
+    this.state = {
+      messages: [], message: ''
+    }
   }
 
   fetchMessages = () => {
     const { user } = this.props;
     axios.get(`/users/${user.id}/messages.json`)
       .then((response) => {
+        this.setState({ messages: response.data, message: '' })
         this.setState({ messages: response.data, message: '' })
       })
   }
@@ -38,34 +41,51 @@ export default class Messages extends Component {
 
   render(){
     const { messages } = this.state;
+
     return(
       <div className='chat'>
         <div className='chat-message-box'>
           {
             messages.map((message) => {
               return(
-                <div className='chat-individual-message-box' key={message.id}>
-                  <div className='chat-user-name'>
-                    {message.sender.email}:
-                  </div>
-                  <div className='chat-message'>
-                    {message.content}
-                  </div>
-                </div>
+                <ul className='collection'>
+                  <li className='chat-individual-message-box collection-item avatar' key={message.id}>
+                    <img src="//robohash.org/107378?set=set2&bgset=bg2&size=70x70" alt="107378" className="circle" />
+                    <span className='chat-user-name'>
+                      {message.sender.email}
+                    </span>
+                    <p>
+                      <i className="prefix mdi-action-alarm" />
+                      <span className="message-date">{message.sender.created_at}{"\n"}</span>
+                      <div className='chat-message'>
+                      {message.content}
+                    </div>
+                    </p>
+                  </li>
+                </ul>
               )
             })
           }
         </div>
-        <div className='chat-input-box'>
-          <form onSubmit={this.handleSubmit}>
-            <input
-              type="text"
-              className="form-control"
-              value={this.state.message}
-              onChange={this.handleMessageChange}
-            />
-          </form>
-        </div>
+        <form className='container footer-input' onSubmit={this.handleSubmit}>
+          <div className="row">
+            <div className='input-field col s10'>
+              <i className="prefix mdi-communication-chat" />
+              <input
+                type="text"
+                className="form-control chat-input-box"
+                value={this.state.message}
+                onChange={this.handleMessageChange}
+                placeholder="Type your message"
+                />
+            </div>
+            <div className="input-field col s2">
+              <button type="submit" className="waves-effect waves-light btn-floating btn-large">
+                <i className="mdi-content-send" />
+              </button>
+            </div>
+          </div>
+        </form>
       </div>
     )
   }
@@ -73,5 +93,4 @@ export default class Messages extends Component {
   componentDidMount(){
     this.fetchMessages();
   }
-
 }

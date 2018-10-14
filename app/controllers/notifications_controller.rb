@@ -4,11 +4,10 @@ class NotificationsController < ApplicationController
 
   def create
     @notification = Proposal.notifications.new(message: "This is a notification my brosef")
-    @proposal = 
+    @proposal =
     @user = Proposal.find(:id).listing.user
     @notification.save!
   end
-
 
   private
 
