@@ -43,19 +43,21 @@ h1{
   margin: 2em;
 }
 .job-container {
-  display: flex;
-  column-count: 2;
-  justify-content: space-evenly;
+  display: flex; 
+  justify-content: center;
+  flex-direction: row;
+  height: 350px;
 }
 
-.job-container2 {
+/* .job-container2 {
   display: flex;
-  column-count: 2;
-  justify-content: space-evenly;
-  margin-top: 4em;
-  }
+  margin:
+  } */
 
 .job_pic {
   width: 250px;
   height: 250px;
+  margin: auto;
+  padding: 2px;
+
 }
