@@ -13,6 +13,10 @@ Rails.application.routes.draw do
     resources :proposals, only: [:update, :destroy]
   end
 
+  resources :users do
+    resources :messages, only: [:create, :index]
+  end
+
   resource :proposals
   resource :map, only: [:show]
   resource :jobs, only: [:show]

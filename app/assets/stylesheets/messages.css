@@ -1,0 +1,26 @@
+.chat {
+  margin-left: 10vw;
+  margin-right: 10vw;
+}
+
+.chat-message-box {
+  height: 50vh;
+  overflow-y: scroll;
+}
+
+.chat-individual-message-box {
+  display: flex;
+}
+
+.chat-username {
+  display: flex;
+}
+
+.chat-message {
+  margin
+}
+
+.chat-input-box {
+  padding-top: 2vw;
+  padding-bottom: 2vw;
+}

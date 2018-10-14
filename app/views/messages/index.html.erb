@@ -1,0 +1,10 @@
+<h1>Chat with <%= @user.email %></h1>
+
+<span id="channel" style="display:none;" data-channel="<%= @channel %>"></span>
+
+<%= react_component 'Messages',
+    props: {
+      currentUser: current_user,
+      user:        @user
+    }
+%>
