@@ -23,5 +23,4 @@ const ListingsModal = props => {
  );
 }
 
-
 export default ListingsModal;

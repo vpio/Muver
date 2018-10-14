@@ -45,8 +45,10 @@
         <td class='row-data '><%= @listing.max_people %></td>
       </tr>
       <tr>
-        <th class='row-name 'scope='row'>Contact:</th>
-        <td class='row-data '><%= @listing.contact %></td>
+        <th class='row-name' scope='row'>Contact:</th>
+        <td class='row-data'>
+          <%= link_to "Send a message", user_messages_path(@listing.user_id), class:'btn btn-light' %>
+        </td>
       </tr>
     </tbody>
   </table>
@@ -61,17 +63,32 @@
   </div>
 
   <% if user_signed_in? %>
-    <% if current_user.id != @listing.user.id %>
-      <%= render 'proposals/form' %>
-    <% end %>
+  <% if current_user.id != @listing.user.id %>
+    <%= render 'proposals/form' %>
+  <% end %>
 
-    <% if current_user.id == @listing.user.id %>
-      <div class='edit-listing-btn'>
-        <%= link_to 'Edit Your Listing', edit_listing_path, class: 'btn btn-primary' %>
-      </div>
+  <% if current_user.id == @listing.user.id %>
+    <div class='edit-listing-btn'>
+      <%= link_to 'Edit Your Listing', edit_listing_path, class: 'btn btn-primary' %>
+    </div>
 
-
-    <% @proposals.each do |p| %>
+  <% @proposals.each do |p| %>
+  <div class='approval-message'>
+    <%= react_component 'Proposal',
+    props: {
+             proposal: p,
+             listing: @listing,
+             user: p.user,
+             notification: p.notification
+           }
+     %>
+  </div>
+  <% end %>
+  <% else %>
+      <% if current_user.id == p.user_id %>
+        <h4>You have offered to help with this move.</h4>
+        <%= button_to "Delete your proposal", [@listing, p], method: :delete, class:'btn btn-danger ml-2' %>
+      <% end %>
     <div class='approval-message'>
       <%= react_component 'Proposal',
       props: {
@@ -95,10 +112,11 @@
       <% end %>
     <% end %>
   <% end %>
+<% end %>
 
-  <hr>
+<hr>
 
-  <div class='btn-group btn-light back'>
-    <%= link_to 'Back', guests_path, :class => 'btn' %>
-  </div>
+<div class='btn-group btn-light back'>
+  <%= link_to 'Back', guests_path, :class => 'btn' %>
+</div>
 </div>

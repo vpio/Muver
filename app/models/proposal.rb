@@ -1,7 +1,5 @@
 class Proposal < ApplicationRecord
-
   after_create :create_notification
-
 
   belongs_to :user
   belongs_to :listing
