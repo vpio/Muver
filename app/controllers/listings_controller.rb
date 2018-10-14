@@ -1,6 +1,5 @@
 class ListingsController < ApplicationController
   before_action :store_user_location!, if: :storable_location?
-  skip_before_action :verify_authenticity_token
 
 
   skip_before_action :verify_authenticity_token
