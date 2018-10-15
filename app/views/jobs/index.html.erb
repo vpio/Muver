@@ -2,22 +2,29 @@
 
 <div class='job-requested'>
   <h3>Requested Jobs</h3>
-  <div>Filler Job 1</div>
+  <div>
+    <% @requested.map do |p| %>
+    <div>
+    <%= "You requested to help #{p.listing.user.first_name}!" %>
+    <%= link_to 'See listing', listing_path(p.listing.id) %>
+    <% end %>
+  </div>
+  </div>
 </div>
 
 <div class='job-approved'>
   <h3>Approved Jobs</h3>
-  <div>Filler Job 2</div>
-</div>
-
-<div class='job-completed'>
-  <h3>Completed Jobs</h3>
-  <div>Filler Job 3</div>
+  <div>
+    <% @approved.map do |p| %>
+    <%= "You were approved to help #{p.listing.user.first_name}!" %>
+    <%= link_to 'See listing', listing_path(p.listing.id)  %>
+    <% end %>
+  </div>
 </div>
 
 <hr>
 
-<div class='btn-group btn-light back'>
+<div class='btn-group btn-light ml-0'>
   <%= link_to 'Find more Jobs', guests_path, :class => 'btn' %>
 </div>
 
