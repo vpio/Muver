@@ -1,0 +1,13 @@
+.navbar-profile-picture {
+  border-radius: 50%;
+}
+
+.lightup.shake {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.nav-link.far.fa-bell.mt-1 {
+  padding-top: .75em;
+}
