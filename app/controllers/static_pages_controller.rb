@@ -5,6 +5,7 @@ class StaticPagesController < ApplicationController
 
   def thanks
     @user = current_user
+    @id = current_user.listings.last.id
   end
 
 end

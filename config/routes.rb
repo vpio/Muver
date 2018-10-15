@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   root 'static_pages#home'
 
-  get '/listings/:id/thanks' => 'static_pages#thanks', as: :thanks
+  get '/thanks' => 'static_pages#thanks', as: :thanks
 
   get 'users/:id' => 'users#show', as: :user_profile
   get 'users/:id/pic' => 'users#new', as: :user_avatar
