@@ -1,20 +1,42 @@
-<h1><%= "#{@user.first_name || @user.email}'s Profile" %></h1>
+<h1><i class="fas fa-user"></i><%= " #{@user.first_name }'s Profile" %></h1>
 
-<div class='card border-primary mb-3 card-shadow' style='max-width: 18rem;'>
-  <div class='card-header'><%= @user.email %></div>
-    <%= image_tag @user.avatar, class: 'card-img-top' if @user.avatar.attached? %>
-  </div>
-  <div class='center-items'>
-    <% if current_user.id == params[:id].to_i %>
-    <div>
-      <%= link_to 'Add Profile Picture', user_avatar_path, class: 'btn btn-primary mb-2' %>
+<div class='card border-primary mb-2 card-shadow profile-card'>
+  <div class="card mb-3">
+    <%= image_tag @user.avatar, class: 'card-img-top profile-pic' if @user.avatar.attached? %>
+    <div class="card-body">
+      <h5 class="card-title user-star-rating">
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star"></span>
+      </h5>
+      <div class="card-text user-average-rating">
+        Müver Rating: 4.75
+      </div>
+      <div class='user-total-ratings'>Total Ratings: 45</div>
+      <p class="card-text"><small class="text-muted member-since">Member since <%= @user.created_at %></small></p>
     </div>
-    <% end %>
+  </div>
 
-    <% if current_user.id == params[:id].to_i %>
-    <div>
-      <%= link_to 'Edit Your Profile!', edit_user_registration_path, class: 'btn btn-primary' %>
-    </div>
-    <% end %>
+  <div class='view-feedback'>
+    <%= link_to 'View Feedback', user_messages_path(params[:id]), class: 'btn btn-primary mb-2' %>
   </div>
+
+  <!-- If user is not owner of the profile -->
+  <% if current_user.id != params[:id].to_i %> -->
+    <div class='send-message'>
+      <%= link_to 'Contact', user_messages_path(params[:id]), class: 'btn btn-primary mb-2' %>
+    </div>
+  <% end %>
+
+  <!-- If user is the owner of the profile -->
+    <% if current_user.id == params[:id].to_i %>
+      <div class='edit-profile-options'>
+        <div>
+          <%= link_to 'Add Profile Picture', user_avatar_path, class: 'btn btn-primary' %>
+          <%= link_to 'Edit Your Profile', edit_user_registration_path, class: 'btn btn-primary' %>
+        </div>
+      </div>
+    <% end %>
 </div>
