@@ -1,6 +1,7 @@
 class StaticPagesController < ApplicationController
 
   def home
+    @full_width = true
   end
 
   def thanks
