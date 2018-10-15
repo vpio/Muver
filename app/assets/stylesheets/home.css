@@ -52,6 +52,15 @@
   font-family: 'Maven Pro', sans-serif;
 }
 
+.intro-mega{
+  text-align: justify;
+  padding-top: 15vw;
+  padding-left: 10vw;
+  padding-right: 10vw;
+  display: inline-block;
+  font-family: 'Maven Pro', sans-serif;
+}
+
 .home-buttons {
   color: #e1e6f0;
   text-align: center;
