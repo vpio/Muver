@@ -1,6 +1,6 @@
 <div class='guests-index-body'>
 
-  <h1 class='page-title'>Here are all the People Moving near you:</h1>
+  <h1 class='page-title'><i class="fas fa-couch"></i>Here are all the People Moving near you:</h1>
 
   <%= form_with(url: guests_path, method: :get, local: true) do |form| %>
     <div class = "form-group">
@@ -9,6 +9,7 @@
         placeholder: 'Search',
         value: params[:zipcode] %>
     </div>
+    
   <% end %>
 
   <div>  <%= react_component 'Map',

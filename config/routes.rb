@@ -13,6 +13,10 @@ Rails.application.routes.draw do
     resources :proposals, only: [:update, :destroy]
   end
 
+  resources :users do
+  resources :messages, only: [:create, :index]
+  end
+
   resources :notifications, only: [:update, :index, :destroy]
 
   resource :proposals

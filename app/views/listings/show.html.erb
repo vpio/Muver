@@ -45,20 +45,13 @@
         <td class='row-data '><%= @listing.max_people %></td>
       </tr>
       <tr>
-        <th class='row-name 'scope='row'>Contact:</th>
-        <td class='row-data '><%= @listing.contact %></td>
+        <th class='row-name' scope='row'>Contact:</th>
+        <td class='row-data'>
+          <%= link_to "Send a message", user_messages_path(@listing.user_id), class:'btn btn-light' %>
+        </td>
       </tr>
     </tbody>
   </table>
-
-  <div class='starting-location-map'><% if @listing.address.present? %>
-    <%= react_component 'Map',
-        props: {
-          coordinates: [@listing.longitude, @listing.latitude],
-          centerOnUser: false
-        } %>
-  <% end %>
-  </div>
 
   <% if user_signed_in? %>
     <% if current_user.id != @listing.user.id %>
@@ -67,10 +60,25 @@
 
     <% if current_user.id == @listing.user.id %>
       <div class='edit-listing-btn'>
-        <%= link_to 'Edit Your Listing', edit_listing_path, class: 'btn btn-primary' %>
+        <%= link_to 'Edit Your Listing', edit_listing_path, class: 'btn btn-link' %>
       </div>
+    <% end %>
+
+  <% if @listing.address.present? %>
+  <div class='starting-location-map'>
+    <%= react_component 'Map',
+        props: {
+          coordinates: [@listing.longitude, @listing.latitude],
+          centerOnUser: false
+        } %>
+
+  </div>
+    <% end %>
 
 
+
+
+  <% if current_user.id == @listing.user.id %>
     <% @proposals.each do |p| %>
     <div class='approval-message'>
       <%= react_component 'Proposal',
@@ -85,7 +93,7 @@
          <%= button_to "Delete this proposal", [@listing, p], method: :delete, class:'btn btn-danger ml-2' %>
        <% end %>
     </div>
-    <% end %>
+      <% end %>
     <% else %>
       <% @proposals.each do |p| %>
         <% if current_user.id == p.user_id %>
@@ -94,7 +102,8 @@
         <% end %>
       <% end %>
     <% end %>
-  <% end %>
+    <% end %>
+
 
   <hr>
 
