@@ -25,6 +25,8 @@
 
   <body>
     <div><%= render('static_pages/navbar') %></div>
+    <div class="full-box">
+      <div class="separator-div">
     <% if notice %>
       <div class='alert alert-success' role='alert'>
         <%= notice %>
@@ -38,5 +40,8 @@
     <div class='container'>
       <%= yield %>
     </div>
+    </div>
+    <div><%= render('static_pages/footer') %></div>
+  </div>
   </body>
 </html>
