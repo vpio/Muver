@@ -11,7 +11,7 @@
   </div>
   <div class='row row-move'>
     <div class='form-group col-md-6'>
-      <div><%= form.label(:street, 'Pick Up Location') %></div>
+      <div><%= form.label(:street, 'Moving From:') %></div>
       <div><%= form.text_field(:street, :placeholder => 'Address', class: 'form-control') %></div>
     </div>
     <div class='form-group col-md-4'>
@@ -25,7 +25,7 @@
   </div>
   <div class='row row-move'>
     <div class='form-group col-md-12'>
-      <div><%= form.label(:ending_address, 'Drop Off Location:') %></div>
+      <div><%= form.label(:ending_address, 'Moving To:') %></div>
       <div><%= form.text_field(:ending_address, :placeholder => 'Address', class: 'form-control') %></div>
     </div>
   </div>
