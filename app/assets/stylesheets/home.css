@@ -25,7 +25,6 @@
   width: 100%;
   left: 0;
   right: 0;
-  padding-bottom: 200vw;
   background:
   	linear-gradient(
   		#c6e5ec,
@@ -78,26 +77,32 @@
   text-align: center;
 }
 .man {
-  width: 300px;
+  width: 375px;
 }
 .pics{
   width: 350px;
   padding: 10px;
-  border: #b8437d solid 1px;
+  border: #d61274 solid 1px;
+  border-radius: 2%;
 }
+
 .center {
-  padding-top: 50px;
+  padding-top: 2em;
+  display: flex;
   justify-content: center;
-  text-align: center;
 }
 
 .footer-ul { 
   list-style-type: none;
-  justify-content: flex-start;
-  width: 33%;
-  font-size: 18px;
-}
+  font-size: 20px;
+   }
 
-.light-up{
+.social {
+  padding-bottom: 1em;
+  list-style-type: none;
+  text-align: center;
+  }
+
+.light-up {
   color: red !important;
 }
