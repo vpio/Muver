@@ -1,0 +1,7 @@
+.mapbox-marker {
+  height: 25px;
+  width: 25px;
+  background-size: cover;
+  background-image: url("https://image.flaticon.com/icons/svg/171/171257.svg");
+  cursor: pointer;
+}
