@@ -3,6 +3,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.5.1'
 
+gem 'dotenv-rails', :groups => [:development, :test]
+gem "aws-sdk-s3", require: false
 gem 'faker'
 gem 'devise'
 gem 'devise-bootstrap-views', '~> 1.0'
