@@ -86,7 +86,8 @@
                proposal: p,
                listing: @listing,
                user: p.user,
-               notification: p.notification
+               notification: p.notification,
+               avatar: rails_blob_url(User.find(p.user.id).avatar)
              }
        %>
        <% if current_user.id == p.user_id %>

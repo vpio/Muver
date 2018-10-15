@@ -5,7 +5,8 @@ import axios from 'axios';
 class Proposal extends React.Component{
   state = {
     approved: this.props.proposal.approved,
-    modal: false
+    modal: false,
+    avatar: []
   }
 
   componentDidMount(){
@@ -15,12 +16,24 @@ class Proposal extends React.Component{
         this.toggle()
       }
     }
+    this.getProfile(this.props.user)
+    console.log("this is the avatar", this.state.avatar)
   }
 
   approveProposal = (listing, proposal) => {
     axios.put(`/listings/${listing}/proposals/${proposal.id}.html`, {approved: !proposal.approved})
      this.toggle()
      this.setState({ approved: !proposal.approved })
+  }
+
+  getProfile = (user) => {
+    axios.get(`/users/${user.id}.json`)
+    .then((response) =>{
+      console.log("hello response man", response.data)
+      this.setState({
+         avatar: response.data.avatar
+      })
+    }).catch((error) => {console.log("this is your error", error)})
   }
 
   toggle = () => {
@@ -51,6 +64,8 @@ class Proposal extends React.Component{
             toggle            = {this.toggle}
             readStatusTrue    = {this.readStatusTrue}
             notification      = {this.props.notification}
+            getProfile        = {this.getProfile}
+            avatar            = {this.props.avatar}
             />
         </div>
       )

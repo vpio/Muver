@@ -12,6 +12,7 @@ const ListingsModal = props => {
        <ModalBody>
          <MiniProfile
            user={props.user}
+           avatar={props.avatar}
            />
        </ModalBody>
        <ModalFooter>
