@@ -4,12 +4,12 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   validates :first_name, presence: true
-  
+
   has_many :sent_messages, class_name: "Message", foreign_key: "sender_id"
   has_many :received_messages, class_name: "Message", foreign_key: "recipient_id"
 
-  has_many :proposals
-  has_many :listings
-  has_many :notifications
-  has_one_attached :avatar
+  has_many :proposals, dependent: :destroy
+  has_many :listings, dependent: :destroy
+  has_many :notifications, dependent: :destroy
+  has_one_attached :avatar, dependent: :destroy
 end
