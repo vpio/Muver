@@ -1,41 +1,77 @@
 .chat {
   background: #EEEEEE;
 }
-  .chat-message-box {
+
+.chat-message-box {
   overflow-y: scroll;
   height: 60vh;
 }
- .form-control.chat-input-box {
-  padding-left: 1vw;
+
+.form-control.chat-input-box {
   background-color: white;
 }
- .footer-input {
+
+.container.footer-input {
   width: 100%;
   border-color: #FFFFFF;
   background-color: #409388;
-  bottom: 0;
   height: 85px;
 }
- .prefix.mdi-communication-chat {
+
+.prefix.mdi-communication-chat {
   color: white;
 }
- .chip {
-  font-style: italic;
-  max-width: 80%;
-  min-width: 50%;
+
+.chat-avatar-image {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  margin-left: 10px;
+  margin-top: 12px;
+  margin-right: 20px;
+  margin-bottom: -12px;
 }
- .message-date {
-  color: #585858;
+
+.chat-message-timestamp {
+  color: #929292;
+  margin-top: 20px;
+  font-size: .8em;
 }
- .input-field.col.s2 {
+
+.span.chat-message-timestamp {
+  padding-left: 4vw;
+}
+
+.chat-message {
+  padding-left: 80px;
+  margin-top: -15px
+}
+
+.input-field.col.s2 {
   flex-grow: 0;
   margin-left: 0;
   bottom: 0;
 }
- .collection {
+
+.collection {
  margin-bottom:1px;
  margin-top: -1px;
 }
- .btn-group.btn-light.back {
+
+.btn-group.btn-light.back {
   margin-top: 5vw;
+}
+
+.text-input-box.row {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  height: 70px;
+}
+
+.input-field.col.s12 {
+  padding-top: 1.5rem;
 }
