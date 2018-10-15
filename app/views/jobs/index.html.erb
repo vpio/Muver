@@ -4,11 +4,13 @@
   <h3>Requested Jobs</h3>
   <div>
     <% @requested.map do |p| %>
-    <div>
-    <%= "You requested to help #{p.listing.user.first_name}!" %>
-    <%= link_to 'See listing', listing_path(p.listing.id) %>
+      <div>
+      <%= "You requested to help #{p.listing.user.first_name}!" %>
+      <div class='btn-group btn-light'>
+        <%= link_to 'See listing', listing_path(p.listing.id), class: :btn  %>
+      </div>
     <% end %>
-  </div>
+      </div>
   </div>
 </div>
 
@@ -16,8 +18,11 @@
   <h3>Approved Jobs</h3>
   <div>
     <% @approved.map do |p| %>
+    <div>
     <%= "You were approved to help #{p.listing.user.first_name}!" %>
-    <%= link_to 'See listing', listing_path(p.listing.id)  %>
+    <div class='btn-group btn-primary'>
+      <%= link_to 'See listing', listing_path(p.listing.id), class: :btn  %>
+    </div>
     <% end %>
   </div>
 </div>
@@ -25,7 +30,7 @@
 <hr>
 
 <div class='btn-group btn-light ml-0'>
-  <%= link_to 'Find more Jobs', guests_path, :class => 'btn' %>
+  <%= link_to 'Find more Jobs', guests_path, class: :btn %>
 </div>
 
 <div class="job-container">
