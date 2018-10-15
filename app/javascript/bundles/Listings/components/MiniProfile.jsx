@@ -4,7 +4,7 @@ const MiniProfile = props => {
   return (
     <div>
       <h1>{ `${props.user.first_name}'s Profile` }</h1>
-      <img src={props.avatar} className='card-img-top'/>
+      <img src={props.avatar} className='card-img-top profile-pic'/>
       <div className='card border-primary mb-3 card-shadow' >
       <div className='card-header'>{props.user.email}</div>
       <a href={`/users/${props.user.id}`} className='card-header'>View Full Profile</a>

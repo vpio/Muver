@@ -87,7 +87,7 @@
                listing: @listing,
                user: p.user,
                notification: p.notification,
-               avatar: User.find(p.user.id).avatar.filename
+               avatar: rails_blob_url(User.find(p.user.id).avatar)
              }
        %>
        <%= User.find(p.user.id).avatar.record_id %>
