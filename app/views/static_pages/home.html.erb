@@ -1,46 +1,44 @@
 <div class='home-page'>
-  <h1 class='intro'>Whether you need assistance with a move or you want to earn extra income helping someone move, Müver  can connect you!</h1>
 
+   <h1 class='intro'>Whether you need assistance with a move or you want to earn extra income helping someone   move, Müver  can     connect you!</h1>
 
-    <div class="png_container">
-      <%= image_tag "image3.png", class:'man'%>
-    </div> 
-
-  <div class="home-buttons">
-  
+<div class="png_container">
+        <%= image_tag "image3.png", class:'man'%>
+</div> 
+    
+<div class="home-buttons">
     <div class="container-home">
       <%= link_to 'Create A Listing', new_listing_path, id: "first-button", class: "btn btn-outline-dark btn-lg"%>
     </div>
-     
     <div class="container-home">
       <%= link_to 'Browse Listings', guests_path, id: "second-button", class: "btn btn-outline-dark btn-lg"%>
     </div>
-  </div>
+</div>
 
     <div class="pics_container">
-      <%= image_tag "pick-four.jpg", class: 'pics'%>
-      <%= image_tag "pick-two.jpg", class: 'pics'%>
-      <%= image_tag "pick-three.jpg", class: 'pics'%>
-    </div>
+       <%= image_tag "pick-four.jpg", class: 'pics'%>
+       <%= image_tag "pick-two.jpg", class: 'pics'%>
+       <%= image_tag "pick-three.jpg", class: 'pics'%>
+     </div>
 
-<footer class="container-footer">
-<div class="row center">
-  <ul class="footer-ul">
+<footer class="footer_container">
+   <div class="row center">
+    <ul class="footer-ul">
       <li>About Us</li>
       <li>Contact Us</li>
       <li>Reviews</li>
-  </ul>
-  <ul class="footer-ul">
+    </ul>
+    <ul class="footer-ul">
       <li>Movers</li>
       <li>Helpers</li>
       <li>Insurance</li>
-  </ul>
-  <ul class="footer-ul">
-      <li>Facebook</li>
-      <li>Twitter</li>
-      <li>Instagram</li>
-  </ul>
-  
-    </div>
-  </footer>
-</div>
+    </ul>
+   </div>  
+   <div class="social">
+      <%= image_tag "facebook.png", class: 'Facebook'%>
+      <%= image_tag "instagram.png", class: 'Twitter'%>
+      <%= image_tag "twitter.png", class: 'Instagram'%>
+   </div>
+  </div>
+ </footer>
+</div> 

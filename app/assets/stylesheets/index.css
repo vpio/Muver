@@ -40,7 +40,7 @@ h1{
 }
 
 .btn-light {
-  margin: 2em;
+  margin: 1em;
 }
 .job-container {
   display: flex; 
@@ -49,15 +49,19 @@ h1{
   height: 350px;
 }
 
-/* .job-container2 {
-  display: flex;
-  margin:
-  } */
-
 .job_pic {
   width: 250px;
-  height: 250px;
   margin: auto;
   padding: 2px;
-
 }
+
+.row {
+  display: flex;
+  justify-content: center;
+  justify-content: space-evenly;
+  margin: auto;
+  padding: 2em;
+}
+
+
+
