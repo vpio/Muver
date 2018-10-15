@@ -53,17 +53,6 @@
     </tbody>
   </table>
 
-  <% if user_signed_in? %>
-    <% if current_user.id != @listing.user.id %>
-      <%= render 'proposals/form' %>
-    <% end %>
-
-    <% if current_user.id == @listing.user.id %>
-      <div class='edit-listing-btn'>
-        <%= link_to 'Edit Your Listing', edit_listing_path, class: 'btn btn-link' %>
-      </div>
-    <% end %>
-
   <% if @listing.address.present? %>
   <div class='starting-location-map'>
     <%= react_component 'Map',
@@ -74,9 +63,16 @@
 
   </div>
     <% end %>
+  <% if user_signed_in? %>
+    <% if current_user.id != @listing.user.id %>
+      <%= render 'proposals/form' %>
+    <% end %>
 
-
-
+    <% if current_user.id == @listing.user.id %>
+      <div class='edit-listing-btn'>
+        <%= link_to 'Edit Your Listing', edit_listing_path, class: 'btn btn-link' %>
+      </div>
+    <% end %>
 
   <% if current_user.id == @listing.user.id %>
     <% @proposals.each do |p| %>
