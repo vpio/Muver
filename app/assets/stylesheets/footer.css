@@ -1,0 +1,22 @@
+.footer{
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #e5e5e5;
+  text-align: center;
+
+}
+
+.full-box{
+  position: relative;
+}
+
+.separator-div{
+  padding-bottom: 100px;
+}
+
+.list-collection{
+  display: flex;
+  justify-content: space-around;
+}
