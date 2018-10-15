@@ -39,6 +39,8 @@ export default class Messages extends Component {
     this.setState({ message });
   }
 
+
+
   render(){
     const { messages } = this.state;
 
@@ -48,29 +50,24 @@ export default class Messages extends Component {
           {
             messages.map((message) => {
               return(
-                <ul className='collection' key={message.id}>
-                  <li className='chat-individual-message-box collection-item avatar' key={message.id}>
-                    <img src="//robohash.org/107378?set=set2&bgset=bg2&size=70x70" alt="107378" className="circle" />
-                    <span className='chat-user-name'>
-                      {message.sender.email}
+                <div className='collection' key={message.id}>
+                  <div className='chat-individual-message-box collection-item' key={message.id}>
+                    <img src="/images/avatar-placeholder.png" alt="Profile avatar picture" className="chat-avatar-image" />
+                    <span className="chat-message-timestamp">
+                      {Date(message.created_at)}
                     </span>
-                    <p>
-                      <i className="prefix mdi-action-alarm" />
-                      <span className="message-date">{message.sender.created_at}{"\n"}</span>
-                      <div className='chat-message'>
-                      {message.content}
+                    <div className='chat-message'>
+                      {message.sender.first_name}: {message.content}
                     </div>
-                    </p>
-                  </li>
-                </ul>
+                </div>
+              </div>
               )
             })
           }
         </div>
         <form className='container footer-input' onSubmit={this.handleSubmit}>
-          <div className="row">
-            <div className='input-field col s10'>
-              <i className="prefix mdi-communication-chat" />
+          <div className="row text-input-box">
+            <div className='input-field col s12'>
               <input
                 type="text"
                 className="form-control chat-input-box"
@@ -78,11 +75,6 @@ export default class Messages extends Component {
                 onChange={this.handleMessageChange}
                 placeholder="Type your message"
                 />
-            </div>
-            <div className="input-field col s2">
-              <button type="submit" className="waves-effect waves-light btn-floating btn-large">
-                <i className="mdi-content-send" />
-              </button>
             </div>
           </div>
         </form>
