@@ -2,12 +2,68 @@
   font-family: 'Maven Pro', sans-serif;
 }
 
+.profile-header {
+  font-size: 1.5em;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  margin-top: 1rem;
+}
+
+.card.border-primary.mb-2.card-shadow.profile-card {
+  margin: auto;
+}
+
+.profile-card {
+  max-width: 25rem;
+  text-align: center;
+}
+
 .profile-pic{
   height: 150px;
   width: auto;
 }
 
-.center-items{
-  display: flex;
-  flex-direction: column;
+.card-body {
+  padding-top: 1rem;
+  padding-bottom: .5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.user-star-rating {
+  font-weight: bold;
+}
+
+.checked {
+  color: gold;
+}
+
+.user-average-rating {
+  font-size: 1.1em;
+}
+
+.user-total-ratings {
+  padding-bottom: 2vw;
+  font-size: 1.1em;
+}
+
+.member-since {
+  font-size: .85em;
+}
+
+.view-feedback {
+  margin-bottom: 1em;
+}
+
+.send-message {
+  display: inline-block;
+  margin: auto;
+  margin-bottom: 1em;
+}
+
+.edit-profile-options {
+  display: inline-block;
+  margin: auto;
+  margin-bottom: 1em;
 }
