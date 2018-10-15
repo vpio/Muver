@@ -1,5 +1,5 @@
 *{
-  font-family: 'Maven Pro', sans-serif;
+  font-family: 'Maven Pro', sa ns-serif;
 }
 
 .navbar-home-name {
@@ -21,10 +21,6 @@
 }
 
 .home-page {
-  display: cover;
-  width: 100%;
-  left: 0;
-  right: 0;
   background:
   	linear-gradient(
   		#c6e5ec,
@@ -70,38 +66,18 @@
   margin: 5rem 3rem 5rem 3rem;
   padding: 20px;
 }
-.png_container {
-  text-align: center;
-}
+
 .pics_container{
   text-align: center;
+  padding-bottom: 100px;
 }
-.man {
-  width: 375px;
-}
+
 .pics{
   width: 350px;
   padding: 10px;
   border: #d61274 solid 1px;
   border-radius: 2%;
 }
-
-.center {
-  padding-top: 2em;
-  display: flex;
-  justify-content: center;
-}
-
-.footer-ul { 
-  list-style-type: none;
-  font-size: 20px;
-   }
-
-.social {
-  padding-bottom: 1em;
-  list-style-type: none;
-  text-align: center;
-  }
 
 .light-up {
   color: red !important;

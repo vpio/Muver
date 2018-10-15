@@ -26,21 +26,17 @@
   <body>
     <div><%= render('static_pages/navbar') %></div>
     <div class="full-box">
-      <div class="separator-div">
-    <% if notice %>
-      <div class='alert alert-success' role='alert'>
-        <%= notice %>
-      </div>
-    <% end %>
-    <% if alert %>
-      <div class='alert alert-danger' role='alert'>
-        <%= alert %>
-      </div>
-    <% end %>
-    <div class='container'>
+      <% if notice %>
+        <div class='alert alert-success' role='alert'>
+         <%= notice %>
+        </div>
+      <% end %>
+      <% if alert %>
+        <div class='alert alert-danger' role='alert'>
+          <%= alert %>
+        </div>
+      <% end %>
       <%= yield %>
-    </div>
-    </div>
     <div><%= render('static_pages/footer') %></div>
   </div>
   </body>
