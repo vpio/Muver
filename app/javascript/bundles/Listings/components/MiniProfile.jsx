@@ -6,6 +6,8 @@ const MiniProfile = props => {
       <h1>{ `${props.user.first_name}'s Profile` }</h1>
       <div className='card border-primary mb-3 card-shadow' >
       <div className='card-header'>{props.user.email}</div>
+      <a href={`/users/${props.user.id}`} className='card-header'>View Full Profile</a>
+
         {  /*/{ <%= image_tag @user.avatar, class: "card-img-top" if @user.avatar.attached? %> */}
       </div>
     </div>

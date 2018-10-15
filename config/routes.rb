@@ -23,7 +23,7 @@ Rails.application.routes.draw do
 
   resource :proposals
   resource :map, only: [:show]
-  resource :jobs, only: [:show]
+  resources :jobs, only: [:show, :index]
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
