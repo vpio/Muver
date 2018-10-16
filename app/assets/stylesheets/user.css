@@ -83,3 +83,21 @@
   padding-bottom: 10vw;
   height: 100vh;
 }
+
+@media only screen and (max-width: 600px) {
+  .profile-page {
+    width: 100%;
+    height: 100vh;
+    padding-left: 2.5vw;
+    padding-right: 2.5vw;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .profile-page {
+    width: 100%;
+    height: 160vh;
+    padding-left: .5vw;
+    padding-right: .5vw;
+  }
+}

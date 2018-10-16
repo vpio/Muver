@@ -21,7 +21,7 @@ class MapsController < ApplicationController
                },
                properties: {
                  description: "
-                 <strong>#{listing.description}: $#{listing.price}</strong></div>",
+                 <strong>$#{listing.price}: #{listing.description}</strong></div>",
                  icon: "star",
                  id: listing.id
                }

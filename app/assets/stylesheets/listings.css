@@ -90,3 +90,17 @@
 .show-page {
   padding-bottom: 10em;
 }
+
+.edit-link {
+  padding-bottom: 2em;
+  justify-content: center;
+  display: flex;
+  font-weight: bold;
+}
+
+
+@media only screen and (max-width: 600px) {
+  .guests-index-body {
+  margin-bottom: 15em;
+  }
+}
