@@ -1,13 +1,27 @@
 <div class='home-page' style="">
+    <div class="logo-container">
+  <%= image_tag "muverlogo.png", class: 'container'%>
+  </div>
 
-  <h1 class='intro'>Whether you need assistance with a move or you want to earn extra income helping someone move, Müver can connect you!</h1>
+<script>
+$(function () {
+  $('[data-toggle="popover"]').popover()
+})
+$('.popover-dismiss').popover({
+  trigger: 'hover'
+})
+
+</script>
 
   <div class="home-buttons">
+
+
+
     <div class="container-home 1">
-      <%= link_to 'Create A Listing', new_listing_path, id: "first-button", class: "btn btn-outline-dark btn-lg"%>
+        <a href="<%= new_listing_path %>" id="first-button" data-placement="left" tabindex="0" class="btn btn-outline-info btn-lg" role="button" data-toggle="popover" data-trigger="hover" title="Need Help Moving?" data-content="Create a listing and Muver will connect you!">Create A Listing</a>
     </div>
     <div class="container-home 2">
-      <%= link_to 'Browse Listings', guests_path, id: "second-button", class: "btn btn-outline-dark btn-lg"%>
+      <a href="<%= guests_path %>" id="second-button" data-placement="right" tabindex="0" class="btn btn-outline-info btn-lg" role="button" data-toggle="popover" data-trigger="hover" title="Looking to Make Some Extra Cash?" data-content="Find someone who needs help moving near you!">Browse Listings</a>
     </div>
   </div>
 
@@ -21,5 +35,6 @@
        <%= image_tag "pick-three.jpg", class: 'pics'%>
      </div>
   </div>
+
 
 </div>
