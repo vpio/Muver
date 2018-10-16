@@ -4,13 +4,13 @@
   <table class='table listings-table table-striped'>
     <tbody>
       <tr>
-        <th class='row-name'scope='row'>Pick Up:</th>
+        <th class='row-name'scope='row'>Moving From:</th>
         <td class='row-data'>
           <a href='http://maps.google.com/maps?q=<%= @listing.latitude %>,<%= @listing.longitude %>'><%= @listing.address %></a>
         </td>
       </tr>
       <tr>
-        <th class='row-name 'scope='row'>Drop Off:</th>
+        <th class='row-name 'scope='row'>Moving To:</th>
         <td class='row-data '><%= @listing.ending_address %></td>
       </tr>
       <tr>

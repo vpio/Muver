@@ -1,13 +1,12 @@
-<div class="mt-5 thank-you-page mb-5">
-  <%= react_component 'AwesomeComponent' %>
+<div class="thank-you-page">
+  <div class='thank-you-animation'><%= react_component 'AwesomeComponent' %></div>
 
-  <h1>Hi there <%=@user.first_name%>!</h1>
-  <h3>Thanks for using Müver. We are currently looking for other movers to help you with your move!
+  <h1 class='thank-you-hello'>Hi <%=@user.first_name%>!</h1>
+  <div class='thank-you-message'>Thank you for using Müver. We are currently looking for other movers to help you with your move!</div>
+  <div class='thank-you-message'>An email will be sent to <%=@user.email%> as we match you with a mover who can help.</div>
 
-    An email will be sent to <%=@user.email%> as soon as another mover has signed up to help. </h3>
-
-    <div class='view-listing-center'>
-      <%= link_to 'View Your Listing', listing_path(@id), :class => 'btn btn-dark' %>
-    </div>
+  <div class='view-listing-center'>
+    <%= link_to 'View Your Listing', listing_path(@id), :class => 'btn btn-dark' %>
+  </div>
 
 </div>

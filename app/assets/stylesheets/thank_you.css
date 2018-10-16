@@ -1,0 +1,22 @@
+.thank-you-page {
+  padding-top: 10vw;
+}
+
+.thank-you-hello {
+  font-weight: bold;
+}
+
+.thank-you-message {
+  text-align: justify;
+  align-items: center;
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-top: .5em;
+  padding-bottom: .5em;
+  font-size: 1.2em;
+}
+
+.view-listing-center {
+  padding-top: 5vw;
+  padding-bottom: 30vh;
+}

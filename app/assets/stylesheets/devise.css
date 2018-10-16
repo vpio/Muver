@@ -1,7 +1,13 @@
 .devise-page {
   height: 100vh;
+  margin-bottom: 20vw;
+  align-items: center;
+  justify-content: center;
+  padding-left: 10vw;
+  padding-right: 10vw;
 }
 
-.edit-user-back-button {
-  margin-bottom: 3vw;
+.form-group.devise-page {
+  padding-left: 0;
+  padding-right: 0;
 }
