@@ -43,8 +43,6 @@
 .starting-location-map {
   padding-top: 2vw;
   padding-bottom: 2vw;
-  padding-left: 10vw;
-  padding-right: 10vw;
 }
 
 .listing-status {
@@ -73,4 +71,22 @@
 
 .move-submit-button {
   padding-left: 15px;
+}
+
+.new-move-button {
+  margin-left: 0;
+  margin-right: 0;
+  padding-top: 2em;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.container-form {
+  height: 100vh;
+}
+
+.show-page {
+  padding-bottom: 10em;
 }

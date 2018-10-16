@@ -1,0 +1,68 @@
+/* .my-listing-pics {
+  width: 90%;
+  max-width: 300px;
+  height: auto;
+  max-height: 100%;
+  background-size:cover;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+} */
+
+.table-my-listings {
+  width: 100%
+}
+
+.my-listing-pics {
+  padding-bottom: 100px;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-bottom: 10vw;
+}
+
+.my-listing-pic-1, .my-listing-pic-2 {
+  width: 25em;
+  padding: 10px;
+  border: #d61274 solid 1px;
+  border-radius: 4%;
+  display: inline-block;
+  margin-left: 2em;
+  margin-right: 2em;
+  margin-bottom: 4em;
+}
+
+
+@media only screen and (max-width: 600px) {
+  .my-listing-pics {
+    font-weight: bold;
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .my-listing-pic-1, .my-listing-pic-2 {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    max-height: 100%;
+    background-size:cover;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    margin-left: 0;
+  }
+
+  .pics {
+    float: none;
+  }
