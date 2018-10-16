@@ -1,42 +1,44 @@
-<span><h1><i class="fas fa-city"></i> My Jobs</h1></span>
+<div class='my-jobs-page'>
+  <span><h1><i class="fas fa-city"></i> My Jobs</h1></span>
 
-<table class='table listings-table table-striped'>
-  <h3>Requested Jobs</h3>
-    <% @requested.map do |p| %>
-    <tr>
-        <td class= 'row-data'>
-      <%= "You requested to help #{p.listing.user.first_name}!" %>
+  <table class='table listings-table table-striped'>
+    <h3>Requested Jobs</h3>
+      <% @requested.map do |p| %>
+      <tr>
+          <td class= 'row-data'>
+        <%= "You requested to help #{p.listing.user.first_name}!" %>
+          </td>
+          <td class='row-data'>
+          <%= link_to 'See listing', listing_path(p.listing.id), class: 'btn btn-info float-right'  %>
+          </td>
+      </tr>
+      <% end %>
+  </table>
+
+  <table class='table listings-table table-striped'>
+    <h3>Approved Jobs</h3>
+      <% @approved.map do |p| %>
+      <tr>
+        <td class='row-data'>
+      <%= "You were approved to help #{p.listing.user.first_name}!" %>
         </td>
         <td class='row-data'>
-        <%= link_to 'See listing', listing_path(p.listing.id), class: 'btn btn-info float-right'  %>
+        <%= link_to 'See listing', listing_path(p.listing.id), class:'btn btn-info float-right'  %>
         </td>
-    </tr>
-    <% end %>
-</table>
+      </tr>
+      <% end %>
+  </table>
 
-<table class='table listings-table table-striped'>
-  <h3>Approved Jobs</h3>
-    <% @approved.map do |p| %>
-    <tr>
-      <td class='row-data'>
-    <%= "You were approved to help #{p.listing.user.first_name}!" %>
-      </td>
-      <td class='row-data'>
-      <%= link_to 'See listing', listing_path(p.listing.id), class:'btn btn-info float-right'  %>
-      </td>
-    </tr>
-    <% end %>
-</table>
+  <hr>
 
-<hr>
+  <div class='btn-group btn-light ml-0'>
+    <%= link_to 'Find more Jobs', guests_path, class: 'btn' %>
+  </div>
 
-<div class='btn-group btn-light ml-0'>
-  <%= link_to 'Find more Jobs', guests_path, class: 'btn' %>
-</div>
-
-<div class="job-container">
-<%= image_tag "movebx.png", class: 'job_pic'%>
-<%= image_tag "city.jpg", class: 'job_pic'%>
-<%= image_tag "keys.jpg", class: 'job_pic'%>
-<%= image_tag "driver.jpg", class: 'job_pic'%>
+  <div class="job-container">
+  <%= image_tag "movebx.png", class: 'job_pic'%>
+  <%= image_tag "city.jpg", class: 'job_pic'%>
+  <%= image_tag "keys.jpg", class: 'job_pic'%>
+  <%= image_tag "driver.jpg", class: 'job_pic'%>
+  </div>
 </div>

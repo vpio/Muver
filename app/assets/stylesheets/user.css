@@ -78,3 +78,8 @@
 .devise-bottom {
   padding-bottom: 10vw;
 }
+
+.profile-page {
+  padding-bottom: 10vw;
+  height: 100vh;
+}

@@ -1,3 +1,7 @@
 .devise-page {
   height: 100vh;
 }
+
+.edit-user-back-button {
+  margin-bottom: 3vw;
+}
