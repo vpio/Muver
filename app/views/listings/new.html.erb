@@ -36,7 +36,7 @@
     </div>
     <div class='form-group col-md-5'>
       <div><%= form.label(:difficulty) %></div>
-      <%= form.select(:difficulty, options_for_select([['Easy (Less than 5 pounds)'], ['Normal (Less than 20 pounds)'], ['Hard (Over 20 pounds)']]), {}, {class: 'form-control'}) %>
+      <%= form.select(:difficulty, options_for_select([['Light (Most items under 15 pounds)'], ['Heavy (Most items over 15 pounds)'], ['Both (Mixture of Heavy/Light items)']]), {}, {class: 'form-control'}) %>
     </div>
     <div class='form-group col-md-2'>
       <div><%= form.label(:stairs) %></div>
