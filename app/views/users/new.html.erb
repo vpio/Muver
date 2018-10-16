@@ -1,14 +1,16 @@
-<h1><i class="fas fa-camera"></i> Add Your Profile Picture</h1>
+<div class='add-profile-pic-page'>
+  <h1><i class="fas fa-camera"></i> Add Your Profile Picture</h1>
 
-<%= form_with(model: @user, local: true) do |form|%>
-    <div class='form-group'>
-      <%= form.file_field :avatar %>
-    </div>
-    <div class='actions'>
-      <%= form.submit 'Update My Pic!', class: 'btn btn-primary' %>
-    </div>
-<% end %>
+  <%= form_with(model: @user, local: true) do |form|%>
+      <div class='form-group'>
+        <%= form.file_field :avatar %>
+      </div>
+      <div class='actions'>
+        <%= form.submit 'Update My Pic!', class: 'btn btn-primary' %>
+      </div>
+  <% end %>
 
 
 
-<div class='intro-mega'></div>
+  <div class='intro-mega'></div>
+</div>
