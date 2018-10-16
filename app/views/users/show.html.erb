@@ -3,7 +3,13 @@
 
 <div class='card border-primary mb-2 card-shadow profile-card'>
   <div class="card mb-3">
-    <%= image_tag @user.avatar, class: 'card-img-top profile-pic' if @user.avatar.attached? %>
+
+    <% if @user.avatar.attached? %>
+      <%= image_tag url_for(@user.avatar), :class => 'card-img-top profile-pic' %>
+    <% else %>
+      <%= image_tag 'avatar-placeholder.png', :class => 'card-img-top profile-pic' %>
+    <% end %>
+
     <div class="card-body">
       <h5 class="card-title user-star-rating">
         <span class="fa fa-star checked"></span>
@@ -36,7 +42,7 @@
       <div class='edit-profile-options'>
         <div>
           <%= link_to 'Add Profile Picture', user_avatar_path, class: 'btn btn-primary' %>
-          <%= link_to 'Edit Your Profile', edit_user_registration_path, class: 'btn btn-primary' %>
+          <%= link_to 'Edit Your Profile', edit_user_registration_path, class: 'btn btn-primary user-edit-profile-btn' %>
         </div>
       </div>
     <% end %>

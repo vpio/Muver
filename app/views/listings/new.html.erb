@@ -1,76 +1,78 @@
-<span><h1>
-  <i class='fas fa-dolly'></i> Request Help For Your Move!</h1></span>
+<div class='listing-form-page'>
+  <span><h1>
+    <i class='fas fa-dolly'></i> Request Help For Your Move!</h1></span>
 
-<%= form_with(model: @listing) do |form|%>
+  <%= form_with(model: @listing) do |form|%>
 
-<div class='container-form'>
-  <div class='row row-move'>
-    <div class='form-group col-md-12'>
-      <div><%= form.label(:description) %></div>
-      <div><%= form.text_field(:description, class: 'form-control') %></div>
+  <div class='container-form'>
+    <div class='row row-move'>
+      <div class='form-group col-md-12'>
+        <div><%= form.label(:description) %></div>
+        <div><%= form.text_field(:description, class: 'form-control') %></div>
+      </div>
     </div>
-  </div>
-  <div class='row row-move'>
-    <div class='form-group col-md-6'>
-      <div><%= form.label(:street, 'Moving From:') %></div>
-      <div><%= form.text_field(:street, :placeholder => 'Address', class: 'form-control') %></div>
+    <div class='row row-move'>
+      <div class='form-group col-md-6'>
+        <div><%= form.label(:street, 'Moving From:') %></div>
+        <div><%= form.text_field(:street, :placeholder => 'Address', class: 'form-control') %></div>
+      </div>
+      <div class='form-group col-md-4'>
+        <div><%= form.label(:city) %></div>
+        <div><%= form.text_field(:city, :placeholder => 'City', class: 'form-control') %></div>
+      </div>
+      <div class='form-group col-md-2'>
+        <div><%= form.label(:state) %></div>
+        <div><%= form.text_field(:state, :placeholder => 'State', class: 'form-control') %></div>
+      </div>
     </div>
-    <div class='form-group col-md-4'>
-      <div><%= form.label(:city) %></div>
-      <div><%= form.text_field(:city, :placeholder => 'City', class: 'form-control') %></div>
+    <div class='row row-move'>
+      <div class='form-group col-md-12'>
+        <div><%= form.label(:ending_address, 'Moving To:') %></div>
+        <div><%= form.text_field(:ending_address, :placeholder => 'Address', class: 'form-control') %></div>
+      </div>
     </div>
-    <div class='form-group col-md-2'>
-      <div><%= form.label(:state) %></div>
-      <div><%= form.text_field(:state, :placeholder => 'State', class: 'form-control') %></div>
+    <div class='row row-move'>
+      <div class='form-group col-md-3'>
+        <div><%= form.label(:price) %></div>
+        <div><%= form.number_field(:price, in: 1.0..10000.0, step: 1.0, class: 'form-control') %></div>
+      </div>
+      <div class='form-group col-md-5'>
+        <div><%= form.label(:difficulty) %></div>
+        <%= form.select(:difficulty, options_for_select([['Light (Most items under 15 pounds)'], ['Heavy (Most items over 15 pounds)'], ['Both (Mixture of Heavy/Light items)']]), {}, {class: 'form-control'}) %>
+      </div>
+      <div class='form-group col-md-2'>
+        <div><%= form.label(:stairs) %></div>
+        <%= form.select(:stairs, options_for_select([['Yes'], ['No']]), {}, {class: 'form-control'}) %>
+      </div>
+      <div class='form-group col-md-2'>
+        <div><%= form.label(:max_people) %></div>
+        <div><%= form.number_field(:max_people, in: 1.0..100.0, step: 1.0, class: 'form-control') %></div>
+      </div>
     </div>
-  </div>
-  <div class='row row-move'>
-    <div class='form-group col-md-12'>
-      <div><%= form.label(:ending_address, 'Moving To:') %></div>
-      <div><%= form.text_field(:ending_address, :placeholder => 'Address', class: 'form-control') %></div>
+    <div class='row row-move'>
+      <div class='form-group col-md-4'>
+        <div><%= form.label(:date) %></div>
+        <div><%= form.date_field(:date, class: 'form-control') %></div>
+      </div>
+      <div class='form-group col-md-4'>
+        <div><%= form.label(:time) %></div>
+        <div><%= form.time_field(:time, class: 'form-control') %></div>
+      </div>
+      <div class='form-group col-md-4'>
+        <div><%= form.label(:contact, 'Contact Email') %></div>
+        <div><%= form.email_field(:contact, class: 'form-control') %></div>
+      </div>
     </div>
-  </div>
-  <div class='row row-move'>
-    <div class='form-group col-md-3'>
-      <div><%= form.label(:price) %></div>
-      <div><%= form.number_field(:price, in: 1.0..10000.0, step: 1.0, class: 'form-control') %></div>
-    </div>
-    <div class='form-group col-md-5'>
-      <div><%= form.label(:difficulty) %></div>
-      <%= form.select(:difficulty, options_for_select([['Light (Most items under 15 pounds)'], ['Heavy (Most items over 15 pounds)'], ['Both (Mixture of Heavy/Light items)']]), {}, {class: 'form-control'}) %>
-    </div>
-    <div class='form-group col-md-2'>
-      <div><%= form.label(:stairs) %></div>
-      <%= form.select(:stairs, options_for_select([['Yes'], ['No']]), {}, {class: 'form-control'}) %>
-    </div>
-    <div class='form-group col-md-2'>
-      <div><%= form.label(:max_people) %></div>
-      <div><%= form.number_field(:max_people, in: 1.0..100.0, step: 1.0, class: 'form-control') %></div>
-    </div>
-  </div>
-  <div class='row row-move'>
-    <div class='form-group col-md-4'>
-      <div><%= form.label(:date) %></div>
-      <div><%= form.date_field(:date, class: 'form-control') %></div>
-    </div>
-    <div class='form-group col-md-4'>
-      <div><%= form.label(:time) %></div>
-      <div><%= form.time_field(:time, class: 'form-control') %></div>
-    </div>
-    <div class='form-group col-md-4'>
-      <div><%= form.label(:contact, 'Contact Email') %></div>
-      <div><%= form.email_field(:contact, class: 'form-control') %></div>
-    </div>
-  </div>
 
-  <div class='actions move-submit-button'>
-    <%= form.submit :Submit, class: 'btn btn-primary' %>
-  </div>
-<% end %>
+    <div class='actions move-submit-button'>
+      <%= form.submit :Submit, class: 'btn btn-primary' %>
+    </div>
+  <% end %>
 
-  <hr>
+    <hr>
 
-  <div class='btn-group btn-light'>
-    <%= link_to 'My Listings', listings_path, :class => 'btn' %>
+    <div class='btn-group btn-light'>
+      <%= link_to 'My Listings', listings_path, :class => 'btn' %>
+    </div>
   </div>
 </div>

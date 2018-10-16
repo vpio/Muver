@@ -12,4 +12,12 @@ class User < ApplicationRecord
   has_many :listings, dependent: :destroy
   has_many :notifications, dependent: :destroy
   has_one_attached :avatar, dependent: :destroy
+
+  def user_profile_avatar
+    if @user.avatar.attached?
+      image_tag url_for(@user.avatar), :class => 'card-img-top profile-pic'
+    else
+      image_tag 'avatar-placeholder.png', :class => 'card-img-top profile-pic'
+    end
+  end
 end
