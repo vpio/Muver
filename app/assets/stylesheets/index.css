@@ -32,7 +32,7 @@ h1{
 .guests-index-body{
   display: flex;
   flex-direction: column;
-  padding-bottom: 5em;
+  height: 100vh;
 }
 
 .hide-cards{
@@ -43,7 +43,7 @@ h1{
   margin: 1em;
 }
 .job-container {
-  display: flex; 
+  display: flex;
   justify-content: center;
   flex-direction: row;
   height: 350px;
@@ -62,6 +62,3 @@ h1{
   margin: auto;
   padding: 2em;
 }
-
-
-

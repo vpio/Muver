@@ -16,6 +16,7 @@
   border-color: #FFFFFF;
   background-color: #409388;
   height: 85px;
+  margin-top: 10px;
 }
 
 .prefix.mdi-communication-chat {
@@ -28,12 +29,12 @@
   border-radius: 50%;
   margin-left: 10px;
   margin-top: 12px;
-  margin-right: 20px;
+  margin-right: 10px;
   margin-bottom: -12px;
 }
 
 .chat-message-timestamp {
-  color: #929292;
+  color: #a8a8a8;
   margin-top: 20px;
   font-size: .8em;
 }
@@ -43,7 +44,7 @@
 }
 
 .chat-message {
-  padding-left: 80px;
+  padding-left: 70px;
   margin-top: -15px
 }
 
@@ -74,4 +75,8 @@
 
 .input-field.col.s12 {
   padding-top: 1.5rem;
+}
+
+.chat-back-button {
+  margin-bottom: 10em;
 }

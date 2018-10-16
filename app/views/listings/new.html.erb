@@ -3,6 +3,7 @@
 
 <%= form_with(model: @listing) do |form|%>
 
+<div class='container-form'>
   <div class='row row-move'>
     <div class='form-group col-md-12'>
       <div><%= form.label(:description) %></div>
@@ -67,8 +68,9 @@
   </div>
 <% end %>
 
-<hr>
+  <hr>
 
-<div class='btn-group btn-light'>
-  <%= link_to 'My Listings', listings_path, :class => 'btn' %>
+  <div class='btn-group btn-light'>
+    <%= link_to 'My Listings', listings_path, :class => 'btn' %>
+  </div>
 </div>

@@ -5,9 +5,8 @@
 	width: 100%;
 	font: bold 16px sans-serif;
 	text-align: left;
-
+	padding-top: 5em;
 	padding: 50px 60px 40px;
-	/* margin-top: 80px; */
 	overflow: hidden;
 }
 
@@ -174,6 +173,7 @@
 
 	.footer-distributed{
 		padding: 30px;
+		padding-top: 5em;
 	}
 
 	.footer-distributed .footer-left,

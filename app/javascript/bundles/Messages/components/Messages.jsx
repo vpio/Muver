@@ -54,7 +54,7 @@ export default class Messages extends Component {
                   <div className='chat-individual-message-box collection-item' key={message.id}>
                     <img src="/images/avatar-placeholder.png" alt="Profile avatar picture" className="chat-avatar-image" />
                     <span className="chat-message-timestamp">
-                      {Date(message.created_at)}
+                      {message.created_at}
                     </span>
                     <div className='chat-message'>
                       {message.sender.first_name}: {message.content}
