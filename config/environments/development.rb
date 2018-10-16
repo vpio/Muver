@@ -33,7 +33,7 @@ Rails.application.configure do
   # config.active_storage.service = :local
 
   # Store files on Amazon S3.
-  config.active_storage.service = :amazon
+  config.active_storage.service = :local
 
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false
