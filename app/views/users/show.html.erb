@@ -25,7 +25,7 @@
   </div>
 
   <!-- If user is not owner of the profile -->
-  <% if current_user.id != params[:id].to_i %> -->
+  <% if current_user.id != params[:id].to_i %>
     <div class='send-message'>
       <%= link_to 'Contact', user_messages_path(params[:id]), class: 'btn btn-primary mb-2' %>
     </div>
