@@ -1,31 +1,32 @@
 <span><h1><i class="fas fa-city"></i> My Jobs</h1></span>
 
-<div class='job-requested'>
+<table class='table listings-table table-striped'>
   <h3>Requested Jobs</h3>
-  <div>
     <% @requested.map do |p| %>
-      <div>
+    <tr>
+        <td class= 'row-data'>
       <%= "You requested to help #{p.listing.user.first_name}!" %>
-      <div class='btn-group btn'>
-        <%= link_to 'See listing', listing_path(p.listing.id), class: 'btn btn-primary'  %>
-      </div>
+        </td>
+        <td class='row-data'>
+        <%= link_to 'See listing', listing_path(p.listing.id), class: 'btn btn-info float-right'  %>
+        </td>
+    </tr>
     <% end %>
-      </div>
-  </div>
-</div>
+</table>
 
-<div class='job-approved'>
+<table class='table listings-table table-striped'>
   <h3>Approved Jobs</h3>
-  <div>
     <% @approved.map do |p| %>
-    <div>
+    <tr>
+      <td class='row-data'>
     <%= "You were approved to help #{p.listing.user.first_name}!" %>
-    <div class='btn-group btn'>
-      <%= link_to 'See listing', listing_path(p.listing.id), class:'btn btn-primary'  %>
-    </div>
+      </td>
+      <td class='row-data'>
+      <%= link_to 'See listing', listing_path(p.listing.id), class:'btn btn-info float-right'  %>
+      </td>
+    </tr>
     <% end %>
-  </div>
-</div>
+</table>
 
 <hr>
 
