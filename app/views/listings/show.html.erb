@@ -1,10 +1,12 @@
 <div class='show-page'>
   <h1><strong><%= @listing.city %>, <%= @listing.state %> to <%= @listing.ending_address %></strong></h1>
 
-  <% if current_user.id == @listing.user.id %>
-    <div class='edit-listing-btn'>
-      <%= link_to 'Edit Your Listing', edit_listing_path, class: 'btn btn-link edit-link' %>
-    </div>
+  <% if user_signed_in? %>
+    <% if current_user.id == @listing.user.id %>
+      <div class='edit-listing-btn'>
+        <%= link_to 'Edit Your Listing', edit_listing_path, class: 'btn btn-link edit-link' %>
+      </div>
+    <% end %>
   <% end %>
 
   <table class='table listings-table table-striped'>
