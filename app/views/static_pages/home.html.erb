@@ -4,12 +4,17 @@
   </div>
 
   <script>
-    $(function () {
-      $('[data-toggle="popover"]').popover()
-    })
-    $('.popover-dismiss').popover({
-      trigger: 'hover'
-    })
+  function isMobile() {
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    }
+    if (!isMobile()) {
+      $(function () {
+        $('[data-toggle="popover"]').popover()
+      })
+      $('.popover-dismiss').popover({
+        trigger: 'hover'
+      })
+    }
   </script>
 
   <div class="home-buttons">
