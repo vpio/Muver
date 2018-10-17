@@ -16,9 +16,9 @@ module StaticPagesHelper
   def user_avatar(user_id)
       user = User.find(user_id)
       if user.avatar.attached?
-        image_tag url_for(current_user.avatar), :size => '50x50', :class => 'navbar-profile-picture'
+        image_tag url_for(current_user.avatar), :class => 'navbar-profile-picture'
       else
-        image_tag 'avatar-placeholder.png', :size => '50x50', :class => 'navbar-profile-picture'
+        image_tag 'avatar-placeholder.png', :class => 'navbar-profile-picture'
       end
   end
 end
