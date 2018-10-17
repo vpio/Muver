@@ -9,5 +9,33 @@
 }
 
 .nav-link.far.fa-bell.mt-1 {
-  padding-top: .75em;
+  padding-top: .45em;
+}
+
+.car-and-logo {
+  padding-right: 10px;
+}
+
+.fas.fa-truck {
+  padding-right: 10px;
+}
+
+.nav-link {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.muver-logo-picture {
+  margin-bottom: .25em;
+}
+
+@media only screen and (max-width: 600px) {
+  .nav-link.far.fa-bell.mt-1 {
+    padding-left: .55em;
+  }
+  .nav-link {
+    padding-left: .5em;
+    padding-top: .5em;
+    padding-bottom: .5em;
+  }
 }
