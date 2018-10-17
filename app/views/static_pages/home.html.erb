@@ -1,22 +1,18 @@
 <div class='home-page' style="">
-    <div class="logo-container">
-  <%= image_tag "muverlogo.png", class: 'container'%>
+  <div class="logo-container">
+    <%= image_tag "muverlogo.png", class: 'container'%>
   </div>
 
-<script>
-$(function () {
-  $('[data-toggle="popover"]').popover()
-})
-$('.popover-dismiss').popover({
-  trigger: 'hover'
-})
-
-</script>
+  <script>
+    $(function () {
+      $('[data-toggle="popover"]').popover()
+    })
+    $('.popover-dismiss').popover({
+      trigger: 'hover'
+    })
+  </script>
 
   <div class="home-buttons">
-
-
-
     <div class="container-home 1">
         <a href="<%= new_listing_path %>" id="first-button" data-placement="left" tabindex="0" class="btn btn-outline-info btn-lg" role="button" data-toggle="popover" data-trigger="hover" title="Need Help Moving?" data-content="Create a listing and Muver will connect you!">Create A Listing</a>
     </div>
@@ -27,7 +23,8 @@ $('.popover-dismiss').popover({
 
   <div class="pics_container">
      <div class='home-pics'>
-       <%= image_tag "pick-four.jpg", class: 'pics'%></div>
+       <%= image_tag "pick-four.jpg", class: 'pics'%>
+     </div>
      <div class='home-pics'>
        <%= image_tag "pick-two.jpg", class: 'pics'%>
      </div>
@@ -35,6 +32,5 @@ $('.popover-dismiss').popover({
        <%= image_tag "pick-three.jpg", class: 'pics'%>
      </div>
   </div>
-
 
 </div>
