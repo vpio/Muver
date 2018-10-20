@@ -1,5 +1,7 @@
 # Muver
 
+*Find help or help others move*
+
 This application was the winning application for Wyncode's Pitch Night on October 18th, 2018.
 We had two weeks to create the entire application.
 
