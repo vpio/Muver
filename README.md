@@ -1,24 +1,16 @@
-# README
+# Muver
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This application was the winning application for Wyncode's Pitch Night on October 18th, 2018.
 
-Things you may want to cover:
 
-* Ruby version
+Home             |  After Sign In
+:-------------------------:|:-------------------------:
+<img src="app/assets/images/muver-home-p.png" alt="muver home" width="500"/> |  <img src="app/assets/images/muver-signed-in.png" alt="muver signin" width="500"/>
 
-* System dependencies
+Listings Index             | Listings Show
+:-------------------------:|:-------------------------:
+<img src="app/assets/images/muver-listings-index.png" alt="muver home" width="500"/> |  <img src="app/assets/images/muver-listings-show.png" alt="muver signin" width="500"/>
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Profile Show              | Footer
+:-------------------------:|:-------------------------:
+<img src="app/assets/images/muver-profile-show.png" alt="muver home" width="500"/> |  <img src="app/assets/images/muver-footer.png" alt="muver footer" width="500"/>
